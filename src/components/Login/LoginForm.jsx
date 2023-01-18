@@ -88,20 +88,20 @@ export const LoginForm = ({ setLoginView }) => {
 
   // Error
   const [error, setError] = useState(false);
-  const handleEnter = (e)=>{
-    if(e.key==="Enter"){
-    if (
-      usernameArray.includes(usernameRef.current.value) &&
-      passwordArray.includes(passwordRef.current.value)
-    ) {
-      setUsername(usernameRef.current.value);
-      // setPassword(passwordRef.current.value);
-      setLoginView(false);
-    } else {
-      setError(true);
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      if (
+        usernameArray.includes(usernameRef.current.value) &&
+        passwordArray.includes(passwordRef.current.value)
+      ) {
+        setUsername(usernameRef.current.value);
+        // setPassword(passwordRef.current.value);
+        setLoginView(false);
+      } else {
+        setError(true);
+      }
     }
-  }
-  }
+  };
 
   return (
     <div>
@@ -120,7 +120,9 @@ export const LoginForm = ({ setLoginView }) => {
                 </h4>
               </div>
               <form>
-                <p className="text-lg my-3 text-center">Please login to your account</p>
+                <p className="text-lg my-3 text-center">
+                  Please login to your account
+                </p>
 
                 <div className="form-outline my-4 mx-auto w-fit">
                   <input
@@ -145,7 +147,7 @@ export const LoginForm = ({ setLoginView }) => {
                     className="form-control drop-shadow-md mx-auto md:w-[400px] p-2 rounded-lg border-2 hover:border-[#ee7724]"
                     placeholder="Master Password"
                     ref={passwordRef}
-                    onKeyDown={(e)=>handleEnter(e)}
+                    onKeyDown={(e) => handleEnter(e)}
                     // onChange={(e) => {
                     //   setpasswordDetails(e.target.value);
                     // }}
@@ -167,8 +169,7 @@ export const LoginForm = ({ setLoginView }) => {
                     <button
                       className="block drop-shadow-xl fa-lg bg-gradient-to-r from-[#ee7724] via-red-600 via-[#dd3675] to-[#b44593] px-4 py-2 rounded-lg text-white mx-auto mb-3"
                       type="button"
-                      onClick={
-                        () => {
+                      onClick={() => {
                         //   navigator.vibrate(50);
                         //   login.setLogin("true");
                         if (
@@ -181,8 +182,7 @@ export const LoginForm = ({ setLoginView }) => {
                         } else {
                           setError(true);
                         }
-                      }
-                      }
+                      }}
                     >
                       LOG IN
                     </button>
@@ -215,9 +215,9 @@ export const LoginForm = ({ setLoginView }) => {
                 )}
 
                 {logIn && (
-                    <div className="flex space-x-2 justify-center items-center pb-4">
-                      <p className="my-auto">Don't have an account?</p>
-                      {/* <button
+                  <div className="flex space-x-2 justify-center items-center pb-4">
+                    <p className="my-auto">Don't have an account?</p>
+                    {/* <button
                         type="button"
                         className="bg-red-600 text-xs font-semibold transition ease-in border-2 border-red-600 py-2 px-4 rounded-lg text-white hover:text-red-600 hover:bg-white"
                         onClick={() => {
@@ -228,8 +228,17 @@ export const LoginForm = ({ setLoginView }) => {
                       >
                         CREATE NEW
                       </button> */}
-                      <div className="hover:underline text-red-500 cursor-pointer">Create New</div>
+                    <div
+                      onClick={() => {
+                        // navigator.vibrate(50);
+                        // Signup.setSignUpstate("true");
+                        setLogIn(false);
+                      }}
+                      className="hover:underline text-red-500 cursor-pointer"
+                    >
+                      Create New
                     </div>
+                  </div>
                 )}
               </form>
             </div>

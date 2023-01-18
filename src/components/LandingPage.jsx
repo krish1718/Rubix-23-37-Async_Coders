@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useState } from "react";
 import { motion, useScroll } from "framer-motion";
+import image from "../assets/Landingpageimagejpg.jpg";
 
 const LandingPage = ({ setLandingpagevisibility }) => {
   const ref = useRef(null);
@@ -22,7 +23,7 @@ const LandingPage = ({ setLandingpagevisibility }) => {
       </div>
       {/* // Landing Page  */}
       {/* // First page  */}
-      <div className="min-h-[90vh] mt-[12vh]">
+      <div className="min-h-[90vh] mt-[2vh]">
         <section class="text-gray-600 body-font">
           <div class="container mx-auto flex px-5 pt-10 pb-24 md:flex-row flex-col items-center">
             <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -51,7 +52,7 @@ const LandingPage = ({ setLandingpagevisibility }) => {
               <img
                 class="object-cover object-center rounded w-[50vw]"
                 alt="hero"
-                src="https://imgs.search.brave.com/8AQMBmc9e8R9nvgvTM-HgO5gSE4XHJtuigq7HZ13_V4/rs:fit:811:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5q/R1VoVGZ4dElnVnJB/UXhyX0Y2QjVBSGFF/ViZwaWQ9QXBp"
+                src={image} // src="https://imgs.search.brave.com/8AQMBmc9e8R9nvgvTM-HgO5gSE4XHJtuigq7HZ13_V4/rs:fit:811:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5q/R1VoVGZ4dElnVnJB/UXhyX0Y2QjVBSGFF/ViZwaWQ9QXBp"
               />
             </div>
           </div>

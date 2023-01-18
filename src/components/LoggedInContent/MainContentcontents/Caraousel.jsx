@@ -1,76 +1,103 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "react-material-ui-carousel";
+import ScoreCalc from "./ScoreCalc";
 
 const data = [
-  "https://www.mypustak.com/_next/image?url=https%3A%2F%2Fmypustak-5.s3.ap-south-1.amazonaws.com%2Fuploads%2Fhomebanner%2FHOME_1_1.webp&w=1920&q=75",
-  "https://www.mypustak.com/_next/image?url=https%3A%2F%2Fmypustak-5.s3.ap-south-1.amazonaws.com%2Fuploads%2Fhomebanner%2FHOME_1_1.webp&w=1920&q=75",
-  "https://www.mypustak.com/_next/image?url=https%3A%2F%2Fmypustak-5.s3.ap-south-1.amazonaws.com%2Fuploads%2Fhomebanner%2FHOME_1_1.webp&w=1920&q=75",
-  "https://www.mypustak.com/_next/image?url=https%3A%2F%2Fmypustak-5.s3.ap-south-1.amazonaws.com%2Fuploads%2Fhomebanner%2FHOME_1_1.webp&w=1920&q=75",
+  "1. Having little interest or pleasure in doing things?",
+  "2. Feeling down, depressed or hopeless?",
+  "3. Trouble falling asleep, staying asleep, or sleeping too much?",
+  "4. Feeling tired or having little energy?",
+  "5. Feeling bad about yourself – or that you are a failure or have let yourself or your family down?",
+  "6. Trouble concentrating on things, such as reading the newspaper or watching television?",
+  "7. Feeling nervous, anxious or on edge?",
+  "8. Not being able to stop or control worrying?",
+  "9. Worrying too much about different things?",
+  "10. Having trouble relaxing?",
+  "11. Becoming easily annoyed or irritable? ",
+  "12. Feeling afraid as if something awful might happen?",
 ];
 
 const Caraousel = () => {
-  return (
+  const [sumDepression, setSumDepression] = useState(0);
+  const [sumAnxeity, setSumAnxeity] = useState(0);
+  const [quesCount, setQuesCount] = useState(1);
+  const [hide, setHide] = useState(false);
+  const handleClick = (e) => {
+    let a = parseInt(e.target.textContent);
+
+    quesCount >= 6
+      ? setSumDepression(sumDepression + a)
+      : setSumAnxeity(sumAnxeity + a);
+    setQuesCount(quesCount + 1);
+    if (quesCount === data.length) {
+      setHide(true);
+    }
+  };
+  return !hide ? (
     <>
-      <Carousel
-        className="carasousel"
-        autoPlay={false}
-        animation="slide"
-        indicators={false}
-        navButtonsAlwaysVisible={true}
-        cycleNavigation={true}
-        navButtonsProps={{
-          style: {
-            background: "#fff",
-            color: "#494949",
-            borderRadius: 0,
-            marginTop: -22,
-            height: "104px",
-          },
-        }}
-      >
-        {data.map((imag, i) => {
-          return (
-            <>
-              {/* <img src={imag} alt="img" key={i} className="w-screen" /> */}
-              <div>
-                <div className="h-[90vh] text-center">
-                  <div className="text-5xl font-serif font-bold">Survey</div>
-                  <div className="text-2xl my-10">
-                    1. In the last month, how often have you been upset because
-                    of something that happened unexpectedly?
-                  </div>
-                  <div className="text-white font-bold">
-                    <button
-                      //   onClick={() => {
-                      //     sum += 1;
-                      //   }}
-                      className="bg-red-600 mx-3 py-2 px-4 rounded-lg"
-                    >
-                      0
-                    </button>
-                    <button className="bg-orange-600 mx-3 py-2 px-4 rounded-lg">
-                      1
-                    </button>
-                    <button className="bg-yellow-500 mx-3 py-2 px-4 rounded-lg">
-                      2
-                    </button>
-                    <button className="bg-green-400 mx-3 py-2 px-4 rounded-lg">
-                      3
-                    </button>
-                    <button className="bg-green-600 mx-3 py-2 px-4 rounded-lg">
-                      4
-                    </button>
-                  </div>
-                  <div className="">
-                    <button className="">Prev</button>
-                    <button className="">Next</button>
-                  </div>
-                </div>
+      <div className="text-5xl text-center font-serif font-bold my-10">Survey</div>
+      <>
+        <div className="p-4">
+          <div className="h-[90vh] max-w-[900px] text-center mx-auto">
+            <div className="border-2 min-h-[470px] drop-shadow-lg p-5 md:p-10 rounded-xl">
+              <div className="text-xl font-semibold mb-10">
+                Question {quesCount} of {data.length}
               </div>
-            </>
-          );
-        })}
-      </Carousel>
+              <div className="text-xl font-semibold mb-5">
+                Over last 2 weeks, how often have you been bothered by...
+              </div>
+              <div className="text-2xl mb-10 h-[100px]">{data[quesCount - 1]}</div>
+              <div className="text-white font-bold">
+                <button
+                  onClick={(e) => handleClick(e)}
+                  className="bg-[#45bc37] mx-3 py-2 px-4 rounded-lg"
+                >
+                  1
+                </button>
+                <button
+                  onClick={(e) => handleClick(e)}
+                  className="bg-[#ccde0e] mx-3 py-2 px-4 rounded-lg"
+                >
+                  2
+                </button>
+                <button
+                  onClick={(e) => handleClick(e)}
+                  className="bg-[#f7dd00] mx-3 py-2 px-4 rounded-lg"
+                >
+                  3
+                </button>
+                <button
+                  onClick={(e) => handleClick(e)}
+                  className="bg-[#f97402] mx-3 py-2 px-4 rounded-lg"
+                >
+                  4
+                </button>
+                <button
+                  onClick={(e) => handleClick(e)}
+                  className="bg-[#ea0b0b] mx-3 py-2 px-4 rounded-lg"
+                >
+                  5
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    </>
+  ) : (
+    <>
+      <div className="text-5xl text-center font-serif font-bold">
+        Thanks for your response
+      </div>
+      <div className="text-center text-xl font-semibold mb-10 mt-10">
+        Your score(Depression): {sumDepression}
+        <br />
+        Your score(Anxeity): {sumAnxeity}
+        <br />
+        <ScoreCalc sum={sumDepression} />
+        <br />
+        <ScoreCalc sum={sumAnxeity} />
+      </div>
     </>
   );
 };

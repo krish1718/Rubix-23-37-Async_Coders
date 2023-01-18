@@ -4,13 +4,12 @@ import { usernameContext, passwordContext } from "../App";
 const LandingPageNavbar = ({ setLandingpagevisibility }) => {
   const { username, setUsername } = useContext(usernameContext);
   return (
-    <div className="z-20 sticky top-0 bg-white">
-      <div className="flex justify-between px-4 py-6">
-        <div className="font-bold font-serif">
-          Ummeed
-        </div>
-        <div className="flex flex-row">
-          {/* <div to="/" className="mx-2 hover:text-green-500">
+    <>
+      <div className="z-20 sticky top-0 bg-[#fff4e1]">
+        <div className="flex justify-between p-4 items-center">
+          <div className="font-bold font-serif">Ummeed</div>
+          <div className="flex flex-row">
+            {/* <div to="/" className="mx-2 hover:text-green-500">
             <div className="inline-block peer flex-row">
               Hello, {username ? username : "User"}
               <svg
@@ -44,41 +43,43 @@ const LandingPageNavbar = ({ setLandingpagevisibility }) => {
             </div>
             
           </div> */}
-          <div
-            to="/"
-            className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
-          >
-            About Us
+            <div
+              onClick={() => setLandingpagevisibility(false)}
+              className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
+            >
+              Get Help
+            </div>
+            <div
+              onClick={() => setLandingpagevisibility(false)}
+              className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
+            >
+              Community
+            </div>
+            <div
+              to="/"
+              className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
+            >
+              About Us
+            </div>
+            <div
+              onClick={() => setLandingpagevisibility(false)}
+              className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
+            >
+              Contact Us
+            </div>
           </div>
-          <div
-            onClick={() => setLandingpagevisibility(false)}
-            className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
-          >
-            Get Help
-          </div>
-          <div
-            onClick={() => setLandingpagevisibility(false)}
-            className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
-          >
-            Community
-          </div>
-          <div
-            onClick={() => setLandingpagevisibility(false)}
-            className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
-          >
-            Talk To Us
+          <div className="flex flex-row items-center">
+            <div
+              onClick={() => setLandingpagevisibility(false)}
+              className="mx-2 cursor-pointer h-fit text-white font-semibold py-1 px-3 rounded-md bg-gradient-to-r from-blue-600 to-green-600"
+            >
+              Login
+            </div>
           </div>
         </div>
-        <div className="flex flex-row items-center">
-          <div
-            onClick={() => setLandingpagevisibility(false)}
-            className="mx-2 cursor-pointer h-fit text-white font-semibold py-1 px-3 rounded-md bg-gradient-to-r from-blue-600 to-green-600"
-          >
-            Login
-          </div>
-        </div>
+        <hr className="border border-[#e9d8c5]" />
       </div>
-    </div>
+    </>
   );
 };
 

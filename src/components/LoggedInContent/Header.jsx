@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Header = ({ setLoginView }) => {
   const { username, setUsername } = useContext(usernameContext);
   return (
-    <div className="z-20 sticky top-0 bg-white">
+    <div className="z-20 sticky top-0 bg-white bg-[#]">
       <div className="flex justify-between px-4 py-6">
         <NavLink className="font-bold font-serif" to="/">
           Ummeed
@@ -45,22 +45,23 @@ const Header = ({ setLoginView }) => {
             </div>
             
           </NavLink> */}
-          <NavLink to="/" className="mx-2 hover:text-green-500">
-            Hello, {username ? username : "User"}
+          <NavLink to="/" className="mx-4 hover:text-green-500">
+            Profile
+            {/* Hello, <a className="font-semibold">{username ? username : "User"}</a> */}
           </NavLink>
-          <NavLink to="/" className="mx-2 hover:text-green-500">
-            About Us
+          <NavLink to="/solutions" className="mx-4 hover:text-green-500">
+            Community
           </NavLink>
-          <NavLink to="/solutions" className="mx-2 hover:text-green-500">
-            Self-Care
-          </NavLink>
-          <NavLink to="/" className="mx-2 hover:text-green-500">
+          <NavLink to="/" className="mx-4 hover:text-green-500">
             Get Help
+          </NavLink>
+          <NavLink to="/about" className="mx-4 hover:text-green-500">
+            About Us
           </NavLink>
         </div>
         <div>
-          <NavLink to="/" className="mx-2 hover:text-green-500">
-            Talk To Us
+          <NavLink to="/contact" className="mx-2 hover:text-green-500">
+            Contact Us
           </NavLink>
           <NavLink
             onClick={() => {
@@ -72,6 +73,7 @@ const Header = ({ setLoginView }) => {
           </NavLink>
         </div>
       </div>
+      <hr className="border border-gray-300" />
     </div>
   );
 };

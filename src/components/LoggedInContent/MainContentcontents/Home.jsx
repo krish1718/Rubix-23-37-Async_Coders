@@ -151,41 +151,6 @@ const Home = () => {
         </Dialog.Panel>
       </Dialog> */}
       <Caraousel />
-      <div>
-        <div className="h-[90vh] text-center">
-          <div className="text-5xl font-serif font-bold">Survey</div>
-          <div className="text-2xl my-10">
-            1. In the last month, how often have you been upset because of
-            something that happened unexpectedly?
-          </div>
-          <div className="text-white font-bold">
-            <button
-              //   onClick={() => {
-              //     sum += 1;
-              //   }}
-              className="bg-red-600 mx-3 py-2 px-4 rounded-lg"
-            >
-              0
-            </button>
-            <button className="bg-orange-600 mx-3 py-2 px-4 rounded-lg">
-              1
-            </button>
-            <button className="bg-yellow-500 mx-3 py-2 px-4 rounded-lg">
-              2
-            </button>
-            <button className="bg-green-400 mx-3 py-2 px-4 rounded-lg">
-              3
-            </button>
-            <button className="bg-green-600 mx-3 py-2 px-4 rounded-lg">
-              4
-            </button>
-          </div>
-          <div className="">
-            <button className="">Prev</button>
-            <button className="">Next</button>
-          </div>
-        </div>
-      </div>
       {/* // First page  */}
       <div className="min-h-[90vh] mt-[12vh]">
         <section class="text-gray-600 body-font">

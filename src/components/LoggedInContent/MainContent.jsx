@@ -4,6 +4,7 @@ import Contact from "./MainContentcontents/Contact";
 import Home from "./MainContentcontents/Home";
 import { HashRouter as Router, Route, Routes, NavLink } from "react-router-dom";
 import Community from "./MainContentcontents/Community";
+import About from "./MainContentcontents/About";
 
 const cartContext = createContext({
   cartItems: [],
@@ -25,6 +26,7 @@ const MainContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<Community />} />
+        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
