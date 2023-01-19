@@ -41,9 +41,7 @@ export const LoginForm = ({ setLoginView }) => {
 
   // axios login
   useEffect(() => {
-    // console.log(username);
     if (username && password)
-      // console.log('chalu hai');
       axios
         .post("http://localhost:5000/login", {
           username: username,
@@ -408,4 +406,4 @@ export const LoginForm = ({ setLoginView }) => {
   //       )}
   //     </div>
   //   );
-};
+}

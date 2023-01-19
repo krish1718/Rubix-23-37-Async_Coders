@@ -95,9 +95,9 @@ const Profile = () => {
                 </NavLink>
               </div>
             </div>
-            <div className="bg-white pt-1 pb-3 px-3 rounded-xl ml-3">
+            <NavLink to='/therapist' className="bg-white pt-1 pb-3 px-3 rounded-xl ml-3">
               Talk to an expert or take a survey
-            </div>
+            </NavLink>
           </div>
         </div>
       </div>

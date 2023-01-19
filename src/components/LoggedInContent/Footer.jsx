@@ -23,8 +23,8 @@ const Footer = () => {
         >
           <div className="flex flex-wrap md:text-left text-center order-first">
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-                LOGO
+              <h2 className="title-font font-medium text-purple-600 tracking-widest text-sm mb-3">
+                Info
               </h2>
               <nav className="list-none mb-10">
                 <li>
@@ -48,7 +48,7 @@ const Footer = () => {
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+              <h2 className="title-font font-medium text-purple-600 tracking-widest text-sm mb-3">
                 About Us
               </h2>
               <nav className="list-none mb-10">
@@ -64,7 +64,7 @@ const Footer = () => {
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+              <h2 className="title-font font-medium text-purple-600 tracking-widest text-sm mb-3">
                 Action
               </h2>
               <nav className="list-none mb-10">
@@ -80,7 +80,7 @@ const Footer = () => {
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+              <h2 className="title-font font-medium text-purple-600 tracking-widest text-sm mb-3">
                 Subscribe to our newsletter
               </h2>
               <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
@@ -98,7 +98,7 @@ const Footer = () => {
                     className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
-                <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-purple-600 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                   SUBSCRIBE
                 </button>
               </div>

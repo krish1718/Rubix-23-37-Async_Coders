@@ -61,7 +61,7 @@ const Games = () => {
                   allowtransparency="true"
                   allowfullscreen="true"
                   frameborder="0"
-                  style={{ width: "100%", height: "550px", border: "Opx" }}
+                  style={{ width: "100%", height: "550px", border: "Opx", background: "#FFFFFF" }}
                   src="https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r"
                 ></iframe>
               </NavLink>

@@ -1,5 +1,7 @@
 import React from "react";
 import Breathe from "./Breathe";
+import aboutImg from "../../../assets/aboutImg.jpg";
+
 const About = () => {
   return (
     <>
@@ -86,16 +88,14 @@ const About = () => {
             <li>
               <div className="mx-10 rounded-xl flex items-center justify-center title-font text-8xl mb-4 font-medium text-black text-center w-[40vw] h-[70vh] bg-purple-200">
                 <div className="">
-                  Unwind
-                  <br />
-                  Health
+                  <img src={aboutImg} alt="" />
                 </div>
               </div>
             </li>
             <li>
               <div className="h-screen">
                 <div className="mx-10 mt-10 text-purple-600 text-center font-serif font-bold text-2xl mb-3 w-[40vw]">
-                  Unwind Health: democratizing mental health care around the
+                  Unwind: Helping people with mental health care around the
                   world
                 </div>
                 <div className="mx-10 text-center text-xl mb-3 w-[40vw] h-[70vh]">

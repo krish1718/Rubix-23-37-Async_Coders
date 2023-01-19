@@ -76,7 +76,7 @@ const LandingPageNavbar = ({ setLandingpagevisibility }) => {
           <div className="flex flex-row items-center">
             <div
               onClick={() => setLandingpagevisibility(false)}
-              className="mx-2 cursor-pointer h-fit text-white font-semibold py-1 px-3 rounded-md bg-purple-700"
+              className="mx-2 cursor-pointer hover:bg-purple-700 transition ease-in h-fit text-white font-semibold py-1 px-3 rounded-md bg-purple-600"
             >
               Login
             </div>

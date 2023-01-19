@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 const Contact = () => {
+  const [name,setName] = useState("");
+  const [email,setEmail] = useState("");
+  const [message,setMessage] = useState("");
+  const[clicked,setClicked] = useState(false)
+
+  useEffect(()=>{    
+    if (name && email && message)
+      axios
+        .post("http://localhost:5000/contact", {
+          name: name,
+          email: email,
+          message:message
+        })
+        .then(async (response) => {
+          alert('Submitted')
+          setName("")
+          setEmail("")
+          setMessage("")
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+  },[clicked])
+
   return (
     <div>
       <div>
@@ -44,6 +69,8 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
+                  value={name}
+                  onChange={(e)=>setName(e.target.value)}
                   className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 />
               </div>
@@ -55,6 +82,8 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
+                  value={email}
+                  onChange={(e)=>setEmail(e.target.value)}
                   className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 />
               </div>
@@ -65,10 +94,12 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
+                  value={message}
+                  onChange={(e)=>setMessage(e.target.value)}
                   className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                 ></textarea>
               </div>
-              <button className="text-white bg-purple-600 hover:bg-purple-700 border-0 py-2 px-6 focus:outline-none font-bold rounded text-lg">
+              <button onClick={()=> setClicked(!clicked)} className="text-white bg-purple-600 hover:bg-purple-700 border-0 py-2 px-6 focus:outline-none font-bold rounded text-lg">
                 Send
               </button>
             </div>
