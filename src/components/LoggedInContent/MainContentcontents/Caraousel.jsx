@@ -90,13 +90,11 @@ const Caraousel = () => {
         Thanks for your response
       </div>
       <div className="text-center text-xl font-semibold mb-10 mt-10">
-        Your score(Depression): {sumDepression}
+        {/* Your score(Depression): {sumDepression}
         <br />
         Your score(Anxeity): {sumAnxeity}
-        <br />
-        <ScoreCalc sum={sumDepression} />
-        <br />
-        <ScoreCalc sum={sumAnxeity} />
+        <br /> */}
+        <ScoreCalc sumD={sumDepression} suma={sumAnxeity} />
       </div>
     </>
   );

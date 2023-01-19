@@ -5,6 +5,7 @@ import { usernameContext, passwordContext } from "../../App";
 import axios from "axios";
 import Navigation from "../LoggedInContent/Navigation";
 import image from "../../assets/LoginPageImage.jpg";
+import logoimage from "../../assets/unwind-logo.png";
 
 export const LoginForm = ({ setLoginView }) => {
   //   const [username, setUsername] = useState();
@@ -139,11 +140,11 @@ export const LoginForm = ({ setLoginView }) => {
             <div className="mt-[10vh] my-auto">
               <div className="text-center mx-auto">
                 <img
-                  className="w-[185px] mx-auto"
+                  src={logoimage}
+                  className="h-[25px] mx-auto mb-6 my-auto transition ease-in hover:scale-110"
                   alt=""
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
                 />
-                <h4 className="mt-1 text-xl font-bold mb-5 pb-1">
+                <h4 className="mt-1 text-xl font-bold mb-3 pb-1">
                   Welcome to Unwind
                 </h4>
               </div>

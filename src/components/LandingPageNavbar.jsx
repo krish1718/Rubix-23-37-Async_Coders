@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { usernameContext, passwordContext } from "../App";
+import logoimage from "../assets/unwind-logo.png";
 
 const LandingPageNavbar = ({ setLandingpagevisibility }) => {
   const { username, setUsername } = useContext(usernameContext);
@@ -7,7 +8,11 @@ const LandingPageNavbar = ({ setLandingpagevisibility }) => {
     <>
       <div className="z-20 sticky top-0 bg-[#fff4e1]">
         <div className="flex justify-between p-4 items-center">
-          <div className="font-bold font-serif">Unwind</div>
+          <img
+            src={logoimage}
+            className="h-[25px] my-auto transition ease-in hover:scale-110"
+            alt=""
+          />
           <div className="flex flex-row">
             {/* <div to="/" className="mx-2 hover:text-purple-500">
             <div className="inline-block peer flex-row">
@@ -45,25 +50,25 @@ const LandingPageNavbar = ({ setLandingpagevisibility }) => {
           </div> */}
             <div
               onClick={() => setLandingpagevisibility(false)}
-              className="cursor-pointer w-fit inline-block mx-4 hover:text-purple-500"
+              className="cursor-pointer w-fit inline-block mx-4 transition ease-in hover:scale-110 hover:text-purple-500"
             >
               Get Help
             </div>
             <div
               onClick={() => setLandingpagevisibility(false)}
-              className="cursor-pointer w-fit inline-block mx-4 hover:text-purple-500"
+              className="cursor-pointer w-fit inline-block mx-4 transition ease-in hover:scale-110 hover:text-purple-500"
             >
               Community
             </div>
             <div
               to="/"
-              className="cursor-pointer w-fit inline-block mx-4 hover:text-purple-500"
+              className="cursor-pointer w-fit inline-block mx-4 transition ease-in hover:scale-110 hover:text-purple-500"
             >
               About Us
             </div>
             <div
               onClick={() => setLandingpagevisibility(false)}
-              className="cursor-pointer w-fit inline-block mx-4 hover:text-purple-500"
+              className="cursor-pointer w-fit inline-block mx-4 transition ease-in hover:scale-110 hover:text-purple-500"
             >
               Contact Us
             </div>

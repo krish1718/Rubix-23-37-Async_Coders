@@ -10,6 +10,7 @@ import Profile from "./MainContentcontents/Profile";
 import Breathe from "./MainContentcontents/Breathe";
 import Yoga from "./MainContentcontents/Yoga";
 import MorningExercises from "./MainContentcontents/MorningExercises";
+import Games from "./MainContentcontents/Games";
 
 const cartContext = createContext({
   cartItems: [],
@@ -37,6 +38,7 @@ const MainContent = () => {
         <Route path="/breathe" element={<Breathe />} />
         <Route path="/morningexercises" element={<MorningExercises />} />
         <Route path="/yoga" element={<Yoga />} />
+        <Route path="/games" element={<Games />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </>

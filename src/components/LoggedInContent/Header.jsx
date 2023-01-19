@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { usernameContext, passwordContext } from "../../App";
 import { NavLink } from "react-router-dom";
-import logoimage from "../../assets/unwind-logo.png"
+import logoimage from "../../assets/unwind-logo.png";
 
 const Header = ({ setLoginView }) => {
   const { username, setUsername } = useContext(usernameContext);
@@ -9,7 +9,11 @@ const Header = ({ setLoginView }) => {
     <div className="z-20 sticky top-0 bg-white bg-[#]">
       <div className="flex justify-between px-4 py-6">
         <NavLink className="font-bold font-serif" to="/">
-          <img src={logoimage} className="h-[30px]" alt="" />
+          <img
+            src={logoimage}
+            className="h-[25px] my-auto transition ease-in hover:scale-110"
+            alt=""
+          />
         </NavLink>
         <div>
           {/* <NavLink to="/" className="mx-2 hover:text-purple-500">
@@ -46,20 +50,35 @@ const Header = ({ setLoginView }) => {
             </div>
             
           </NavLink> */}
-          <NavLink to="/profile" className="mx-4 hover:text-purple-500">
+          <NavLink
+            to="/profile"
+            className="mx-4 hover:scale-110 transition ease-in hover:text-purple-500"
+          >
             Profile
             {/* Hello, <a className="font-semibold">{username ? username : "User"}</a> */}
           </NavLink>
-          <NavLink to="/community" className="mx-4 hover:text-purple-500">
+          <NavLink
+            to="/community"
+            className="mx-4 hover:scale-110 transition ease-in hover:text-purple-500"
+          >
             Community
           </NavLink>
-          <NavLink to="/" className="mx-4 hover:text-purple-500">
+          <NavLink
+            to="/"
+            className="mx-4 hover:scale-110 transition ease-in hover:text-purple-500"
+          >
             Get Help
           </NavLink>
-          <NavLink to="/activities" className="mx-4 hover:text-purple-500">
+          <NavLink
+            to="/activities"
+            className="mx-4 hover:scale-110 transition ease-in hover:text-purple-500"
+          >
             Activities
           </NavLink>
-          <NavLink to="/about" className="mx-4 hover:text-purple-500">
+          <NavLink
+            to="/about"
+            className="mx-4 hover:scale-110 transition ease-in hover:text-purple-500"
+          >
             About Us
           </NavLink>
         </div>

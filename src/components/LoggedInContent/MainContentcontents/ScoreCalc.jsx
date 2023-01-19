@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-const ScoreCalc = ({ sum }) => {
+const ScoreCalc = ({ sumD,sumA }) => {
   const [check, setCheck] = useState("");
-  sum = Math.round(sum / 6);
+  sumD = Math.round(sumD / 6);
   useEffect(() => {
     // if (sum <= 2) setCheck("You are fine");
     // else if (sum <= 4) setCheck("You are half mental half normal");

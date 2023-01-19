@@ -459,7 +459,7 @@ const LandingPage = ({ setLandingpagevisibility }) => {
                   </button>
                 </div>
               </li>
-              <li className="mx-5 min-w-[400px]">
+              {/* <li className="mx-5 min-w-[400px]">
                 <div className="border drop-shadow rounded-xl py-3 px-7">
                   <img
                     src="https://imgs.search.brave.com/akq9_jHYZH81QGbZ_5vnvFiiEo45LmbROSo8kPLv1Iw/rs:fit:626:626:1/g:ce/aHR0cHM6Ly9pbWFn/ZS5mcmVlcGlrLmNv/bS9mcmVlLXZlY3Rv/ci9oZWFsdGgtZml0/bmVzcy1jYXJ0b29u/XzI0NjQwLTI1NzA3/LmpwZw"
@@ -491,7 +491,7 @@ const LandingPage = ({ setLandingpagevisibility }) => {
                     </svg>
                   </button>
                 </div>
-              </li>
+              </li> */}
             </ul>
           </div>
         </section>
