@@ -8,7 +8,7 @@ import ChatBot from "./MainContentcontents/chatBot";
 
 const Navigation = ({ setLoginView }) => {
   return (
-    <div>
+    <div className="font-sans">
       <Router>
         <Header setLoginView={setLoginView} />
         <MainContent />

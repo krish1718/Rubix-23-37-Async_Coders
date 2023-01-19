@@ -36,18 +36,19 @@ const Caraousel = () => {
   };
   return !hide ? (
     <>
-      <div className="text-5xl text-center font-serif font-bold my-10">Survey</div>
+    <div className="bg-purple-200"></div>
+      <div className="p-5 mx-10 text-6xl text-center mb-4 font-medium font-serif text-gray-900">Answer this short Survey to help us know how you feel.</div>
       <>
-        <div className="p-4">
+        <div className=" p-4">
           <div className="h-[90vh] max-w-[900px] text-center mx-auto">
-            <div className="border-2 min-h-[470px] drop-shadow-lg p-5 md:p-10 rounded-xl">
-              <div className="text-xl font-semibold mb-10">
-                Question {quesCount} of {data.length}
+            <div className="bg-purple-300  border-2 shadow-2xl min-h-[470px] drop-shadow-lg p-5 md:p-10 rounded-xl">
+              <div className="text-2xl font-serif font-medium mb-10">
+                Question {quesCount}/{data.length}
               </div>
-              <div className="text-xl font-semibold mb-5">
+              <div className="font-serif text-gray-900 text-2xl font-medium mb-5">
                 Over last 2 weeks, how often have you been bothered by...
               </div>
-              <div className="text-2xl mb-10 h-[100px]">{data[quesCount - 1]}</div>
+              <div className="font-serif text-gray-900 text-xl font-medium mb-5">{data[quesCount - 1]}</div>
               <div className="text-white font-bold">
                 <button
                   onClick={(e) => handleClick(e)}
@@ -84,6 +85,7 @@ const Caraousel = () => {
           </div>
         </div>
       </>
+
     </>
   ) : (
     <>

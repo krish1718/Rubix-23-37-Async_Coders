@@ -82,7 +82,7 @@ const LandingPageNavbar = ({ setLandingpagevisibility }) => {
             </div>
           </div>
         </div>
-        <hr className="border border-[#e9d8c5]" />
+        
       </div>
     </>
   );

@@ -26,7 +26,7 @@ const Yoga = () => {
   return (
     <div>
       <div className="font-semibold text-6xl text-center mt-8 mb-3">
-        <a className="text-purple-600 font-bold">YOGA</a> IS A LIFESTYLE
+        <a className="text-purple-600 font-bold text-8xl">YOGA</a> IS A LIFESTYLE
       </div>
       <div className="p-5 flex flex-wrap">
         {name.map((n, i) => {

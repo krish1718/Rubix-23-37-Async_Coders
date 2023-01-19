@@ -6,7 +6,7 @@ import logoimage from "../../assets/unwind-logo.png";
 const Header = ({ setLoginView }) => {
   const { username, setUsername } = useContext(usernameContext);
   return (
-    <div className="z-20 sticky top-0 bg-white bg-[#]">
+    <div className="z-20 sticky top-0 bg-[#fff4e1]">
       <div className="flex justify-between px-4 py-6">
         <NavLink className="font-bold font-serif" to="/">
           <img
@@ -96,7 +96,7 @@ const Header = ({ setLoginView }) => {
           </NavLink>
         </div>
       </div>
-      <hr className="border border-gray-300" />
+      
     </div>
   );
 };

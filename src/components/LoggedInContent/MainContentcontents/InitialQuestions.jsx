@@ -2,6 +2,7 @@ import React, { useContext, useState,useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {usernameContext} from "../../../App"
 import axios from "axios";
+import { AdminUsernameContext } from "../../../App";
 
 const InitialQuestions = ({ setinitialquestions }) => {
   //user details
@@ -13,7 +14,7 @@ const InitialQuestions = ({ setinitialquestions }) => {
     "What would you like to work one?",
   ];
 const fname=useContext(usernameContext);
-console.log(fname)
+const { AdminUsername, setAdminUsername } = useContext(AdminUsernameContext);
 const [dob,setDob] = useState("")
 const [gender,setGender] =useState("")
 const [med,setMed] = useState("")
@@ -28,7 +29,7 @@ const [clicked,setClicked] = useState(false)
 
   useEffect(()=>{    
     if (fname && dob && gender && med && type && clicked){
-      console.log(fname, dob, gender, med, type);
+      setAdminUsername(type);
       axios
         .post("http://localhost:5000/survey", {
           fname:fname,

@@ -12,18 +12,19 @@ const Profile = () => {
   const { username, setUsername } = useContext(usernameContext);
   return (
     <div>
-      <div className="flex min-h-screen bg-gray-200">
+      <div className="font-quicksand flex min-h-screen bg-gray-200">
         <div className="w-1/4 pl-3">
           <div className="bg-white my-3 py-1 px-3 pl-4 rounded-xl min-h-[83vh]">
-            <div className="font-semibold text-xl -ml-1 mb-1">Profile page</div>
+            <div className="text-center font-quicksand font-semibold text-xl -ml-1 mb-1">Profile page</div>
             <img
-              className="w-[170px] h-[170px] rounded-xl my-4"
+              className="mx-20 w-[170px] h-[170px] rounded-xl my-4"
               src="https://dreamvilla.life/wp-content/uploads/2017/07/dummy-profile-pic.png"
               alt=""
             />
-            <div className="font-semibold text-xl">{username}</div>
+            <div className="text-center font-quicksand font-semibold text-xl">{username}</div>
+            <hr />
             <div>
-              <div className="font-semibold mt-7">Badges Earned</div>
+              <div className="font-semibold font-quicksand mt-7">Badges Earned</div>
               <div className="flex my-2 justify-evenly">
                 <img className="w-[65px] rounded-lg" src={days10} alt="" />
                 <img className="w-[65px] rounded-lg" src={days25} alt="" />
@@ -33,7 +34,7 @@ const Profile = () => {
               </div>
             </div>
             <div>
-              <div className="font-semibold mx-auto w-fit my-7 flex">
+              <div className="font-semibold font-quicksand mx-auto w-fit my-7 flex">
                 Your ZenCoins:
                 <div className="flex ml-3">
                   10,000
@@ -56,7 +57,7 @@ const Profile = () => {
               <div className="flex justify-center">
                 <NavLink
                   to="/activities"
-                  className="bg-yellow-400 rounded-xl font-semibold py-3 px-6"
+                  className="bg-yellow-400 hover:bg-yellow-500 font-quicksand transition ease-in rounded-xl font-semibold py-3 px-6"
                 >
                   Earn more ZenCoins
                 </NavLink>

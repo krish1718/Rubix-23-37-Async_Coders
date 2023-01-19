@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react";
 
 const Therapist = () => {
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/type`)
+      .then(function(response) {
+        console.log(response.data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }, []);
   const data = [
     {
       id: "1",
@@ -188,7 +200,7 @@ const Therapist = () => {
                   <div className="text-sm">
                     Qualification: {n.qualification}
                   </div>
-                  <div className="text-sm">Expertise: Doing Nothing</div>
+                  <div className="text-sm">Expertise: {n.tag}</div>
                   <div className="text-sm font-bold mb-5">
                     Consultation fee: Rs {n.price}
                   </div>

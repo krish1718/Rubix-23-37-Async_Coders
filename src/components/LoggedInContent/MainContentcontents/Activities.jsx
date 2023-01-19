@@ -15,13 +15,13 @@ const Activities = () => {
         </div> */}
         <div>
           <div className="min-h-screen p-4">
-            <div className="text-3xl text-center font-semibold my-5 text-purple-600">
+            <div className="text-5xl font-quicksand text-center font-semibold my-5 text-purple-900">
               Select Categories
             </div>
             <div className="flex flex-wrap">
               <NavLink
                 to="/breathe"
-                className="border-4 w-[44vw] hover:bg-purple-100 border-purple-600 text-purple-600 drop-shadow-xl p-3 rounded-xl m-5 font-semibold"
+                className="shadow-2xl  border-2 w-[44vw] hover:bg-purple-200 border-purple-900 text-purple-900 p-3 rounded-xl m-5 font-semibold"
               >
                 <div className="text-center p-3 text-xl font-semibold">
                   Deep Breathing
@@ -34,7 +34,7 @@ const Activities = () => {
               </NavLink>
               <NavLink
                 to="/yoga"
-                className="border-4 w-[44vw] hover:bg-purple-100 border-purple-600 text-purple-600 drop-shadow-xl p-3 rounded-xl m-5 font-semibold"
+                className="shadow-2xl  border-2 w-[44vw] hover:bg-purple-200 border-purple-900 text-purple-900 p-3 rounded-xl m-5 font-semibold"
               >
                 <div className="text-center p-3 text-xl font-semibold">
                   Explore Yoga
@@ -47,7 +47,7 @@ const Activities = () => {
               </NavLink>
               <NavLink
                 to="/morningexercises"
-                className="border-4 w-[44vw] hover:bg-purple-100 border-purple-600 text-purple-600 drop-shadow-xl p-3 rounded-xl m-5 font-semibold"
+                className="shadow-2xl  border-2 w-[44vw] hover:bg-purple-200 border-purple-900 text-purple-900 p-3 rounded-xl m-5 font-semibold"
               >
                 <div className="text-center p-3 text-xl font-semibold">
                   Nature Sounds and Podcasts
@@ -61,7 +61,7 @@ const Activities = () => {
               </NavLink>
               <NavLink
                 to="/games"
-                className="border-4 w-[44vw] hover:bg-purple-100 border-purple-600 text-purple-600 drop-shadow-xl p-3 rounded-xl m-5 font-semibold"
+                className="shadow-2xl  border-2 w-[44vw] hover:bg-purple-200 border-purple-900 text-purple-900 p-3 rounded-xl m-5 font-semibold"
               >
                 <div className="text-center p-3 text-xl font-semibold">
                   Relaxing Games

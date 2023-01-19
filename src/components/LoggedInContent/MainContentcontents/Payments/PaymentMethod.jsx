@@ -29,7 +29,7 @@ export default function PaymentMethod() {
     <div className="bg-gray-200 min-h-[60vh]">
       <div className="flex p-4">
         {/* left part  */}
-        <div className="w-3/5 bg-white text-left p-3 text-black">
+        <div className="w-3/5 bg-white rounded-xl text-left p-3 text-black">
           <div className="text-2xl mb-3 font-semibold">
             Select a payment method
           </div>
@@ -83,7 +83,7 @@ export default function PaymentMethod() {
         </div>
         {/* right part  */}
         <div className=" w-5/12 px-3">
-          <div className="bg-white text-left p-4 text-black">
+          <div className="bg-white text-left rounded-xl p-4 text-black">
             <NavLink to="/paymentpage">
               <button className="bg-purple-600 text-sm text-white font-semibold py-2 w-full rounded-lg my-2 hover:bg-purple-700">
                 Place Your Order And Pay
@@ -107,12 +107,12 @@ export default function PaymentMethod() {
               <div>Promotion(s) Applied:</div>
               {/* <div className="ml-auto">- ₹{cartPrice}.00</div> */}
               {/* Coupon discount NEWYEAR60 below */}
-              <div className="ml-auto">- ₹300.00</div>
+              <div className="ml-auto">- ₹0.00</div>
             </div>
             <div className="flex text-xl text-red-600 font-bold my-2">
               <div>Order Total:</div>
               {/* <div className="ml-auto">₹{discountedPrice}.00</div> */}
-              <div className="ml-auto">₹{id-300}.00</div>
+              <div className="ml-auto">₹{id}.00</div>
             </div>
             <div className="font-semibold">
               Order Totals include GST.

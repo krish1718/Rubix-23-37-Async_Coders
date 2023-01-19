@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CircularProgress from "./CircularProgress";
 import breatheman from "../../../assets/Breathe.jpg";
+import { motion } from "framer-motion";
 
 const Breathe = () => {
   const [minutes, setMinutes] = useState(1);
@@ -33,21 +34,32 @@ const Breathe = () => {
 
   return (
     <>
-      <div className="App min-h-[90vh] flex items-center">
-        <div className="flex p-5 justify-between items-center w-full">
+    <div className="bg-gray-100 App min-h-[90vh] flex items-center">
+      <motion.div
+          initial={{ y: "50%", opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.3,
+            ease: "easeOut",
+          }}
+          className="container px-5 py-16 mx-auto "
+        >
+      
+        <div className="flex justify-between items-center w-full">
           <div className="flex w-2/3 items-center">
-            <div className="pl-5">
-              <div className="font-serif font-bold text-4xl mb-5">
+            <div className="">
+              <div className="font-noto serif font-bold text-4xl mb-5">
                 Take a breath and relax
               </div>
-              <div className="font-semibold max-w-[33vw]">
+              <div className="font-quicksand font-semibold max-w-[33vw]">
                 The One Minute Deep Breath is simple, yet can be very
                 challenging and profound. This is because they can help to quiet
                 the mind and focus on the present moment, rather than dwelling
                 on past events or worrying about the future.
               </div>
             </div>
-            <div className="p-3 w-fit mx-auto">
+            <div className=" w-fit mx-auto font-quicksand">
               <CircularProgress
                 size={250}
                 strokeWidth={20}
@@ -65,10 +77,12 @@ const Breathe = () => {
             </div>
           </div>
           <div className="w-1/3">
-            <img className="ml-auto my-auto" src={breatheman} alt="" />
+            <img className="mx-20 shadow-2xl" src={breatheman} alt="" />
           </div>
         </div>
+        </motion.div>
       </div>
+      
     </>
   );
 };

@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const session = require('express-session');
 const path = require('path');
 const cors = require("cors");
 const port = 5000;
@@ -7,6 +8,13 @@ const port = 5000;
 const app = express();
 app.use(express.json());
 app.use(cors()); 
+app.use(session({
+    secret: 'thisisasecretkey',
+    resave: false,
+    saveUninitialized: false,
+    username: '',
+    type: ''
+}))
 
 // EXPRESS
 // app.use('/static', express.static('static'));
@@ -33,6 +41,13 @@ var surveySchema = new mongoose.Schema({
 
 //Model
 var Survey = mongoose.model('Survey', surveySchema);
+
+var stype;
+
+app.get('/type', (req, res)=>{
+    res.json(stype);
+})
+
 app.post('/survey', (req, res)=>{
     var details = {};
     details.name = req.body.fname.username;
@@ -40,6 +55,11 @@ app.post('/survey', (req, res)=>{
     details.gender = req.body.gender;
     details.med = req.body.med;
     details.type = req.body.type;
+
+    req.session.username = req.body.fname.username;
+    req.session.type = req.body.type;
+    stype = req.body.type;
+    console.log(req.session);
 
     var myData = new Survey(details);
     myData.save().then(()=>{

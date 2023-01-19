@@ -158,6 +158,57 @@ const About = () => {
           </div> */}
         </section>
       </div>
+      {/* // Survey Page  */}
+      <div>
+        <div className="bg-purple-400 p-4 min-h-[90vh]">
+          <div className="bg-white p-4 rounded-2xl">
+            <div className="text-3xl font-bold text-center">
+              How do you feel today?
+            </div>
+            <div className="mt-10 mb-5">
+              <div className="text-purple-700 font-semibold text-center mb-2 text-xl">
+                Would you recommend Krish a paracheute?
+              </div>
+              <div className="flex flex-row w-fit mx-auto">
+                <button className="mx-3 hover:bg-purple-600 hover:text-white font-semibold bg-gray-200 px-5 py-2 rounded-lg">
+                  1
+                </button>
+                <button className="mx-3 hover:bg-purple-600 hover:text-white font-semibold bg-gray-200 px-5 py-2 rounded-lg">
+                  2
+                </button>
+                <button className="mx-3 hover:bg-purple-600 hover:text-white font-semibold bg-gray-200 px-5 py-2 rounded-lg">
+                  3
+                </button>
+                <button className="mx-3 hover:bg-purple-600 hover:text-white font-semibold bg-gray-200 px-5 py-2 rounded-lg">
+                  4
+                </button>
+              </div>
+            </div>
+            <div className="mt-10 mb-5">
+              <div className="text-purple-700 font-semibold text-center mb-2 text-xl">
+                How would you score your integrating experience so far?
+              </div>
+              <div className="flex flex-row w-fit mx-auto">
+                <button className="mx-3 hover:bg-purple-600 hover:text-white font-semibold bg-gray-200 px-5 py-2 rounded-lg">
+                  1
+                </button>
+                <button className="mx-3 hover:bg-purple-600 hover:text-white font-semibold bg-gray-200 px-5 py-2 rounded-lg">
+                  2
+                </button>
+                <button className="mx-3 hover:bg-purple-600 hover:text-white font-semibold bg-gray-200 px-5 py-2 rounded-lg">
+                  3
+                </button>
+                <button className="mx-3 hover:bg-purple-600 hover:text-white font-semibold bg-gray-200 px-5 py-2 rounded-lg">
+                  4
+                </button>
+                <button className="mx-3 hover:bg-purple-600 hover:text-white font-semibold bg-gray-200 px-5 py-2 rounded-lg">
+                  5
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
