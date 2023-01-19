@@ -50,31 +50,31 @@ const Caraousel = () => {
               <div className="text-white font-bold">
                 <button
                   onClick={(e) => handleClick(e)}
-                  className="bg-[#45bc37] mx-3 py-2 px-4 rounded-lg"
+                  className="bg-[#45bc37] hover:scale-110 transition ease-in mx-3 py-2 px-4 rounded-lg"
                 >
                   1
                 </button>
                 <button
                   onClick={(e) => handleClick(e)}
-                  className="bg-[#ccde0e] mx-3 py-2 px-4 rounded-lg"
+                  className="bg-[#ccde0e] hover:scale-110 transition ease-in mx-3 py-2 px-4 rounded-lg"
                 >
                   2
                 </button>
                 <button
                   onClick={(e) => handleClick(e)}
-                  className="bg-[#f7dd00] mx-3 py-2 px-4 rounded-lg"
+                  className="bg-[#f7dd00] hover:scale-110 transition ease-in mx-3 py-2 px-4 rounded-lg"
                 >
                   3
                 </button>
                 <button
                   onClick={(e) => handleClick(e)}
-                  className="bg-[#f97402] mx-3 py-2 px-4 rounded-lg"
+                  className="bg-[#f97402] hover:scale-110 transition ease-in mx-3 py-2 px-4 rounded-lg"
                 >
                   4
                 </button>
                 <button
                   onClick={(e) => handleClick(e)}
-                  className="bg-[#ea0b0b] mx-3 py-2 px-4 rounded-lg"
+                  className="bg-[#ea0b0b] hover:scale-110 transition ease-in mx-3 py-2 px-4 rounded-lg"
                 >
                   5
                 </button>

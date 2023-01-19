@@ -14,7 +14,7 @@ app.use(express.urlencoded())
 
 // MONGOOSE
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb://localhost/prac', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/prac', {useNewUrlParser: true});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -29,46 +29,45 @@ var commSchema = new mongoose.Schema({
 });
 
 //Model
-var Message = mongoose.model('Message', commSchema);
+var Group1 = mongoose.model('Group1', commSchema);
+var Group2 = mongoose.model('Group2', commSchema);
 
 app.post("/community", (req, res) => {
-    var myData = new Message(req.body)
-    myData.save().then(()=>{
-        console.log('done');
-        res.send('This data has been saved to the database')
-    }).catch(()=>{
-        console.log('not done');
-        res.status(400).send('Item was not saved to the database')
-    });
+    var groupname = req.query.chat;
+
+    if(groupname == 'Group1'){
+        var myData = new Group1(req.body)
+        myData.save().then(()=>{
+            console.log('done');
+            res.send('This data has been saved to the database')
+        }).catch(()=>{
+            console.log('not done');
+            res.status(400).send('Item was not saved to the database')
+        });
+    }
+    else{
+        var myData = new Group2(req.body)
+        myData.save().then(()=>{
+            console.log('done');
+            res.send('This data has been saved to the database')
+        }).catch(()=>{
+            console.log('not done');
+            res.status(400).send('Item was not saved to the database')
+        });
+    }
 });
 
 app.get("/community", (req, res)=>{
+    var groupname = req.query.chat;
+    groupname = groupname.toLowerCase();
     let view;
+    
     async function viewMessages(){
-        view = await db.collection('messages').find().toArray();
+        view = await db.collection(`${groupname}`).find().toArray();
         res.json(view);
     }
     viewMessages();
 })
-
-// app.post('/login', (req, res)=>{
-//   var username = req.body.username;
-//   var password = req.body.password;
-
-//   console.log(req.body);
-
-//   Log.find({username: `${username}`}, {password: `${password}`}, (err, docs)=>{
-//       if(err){
-//           console.log('acc not found');
-//           res.status(400).send('Invalid credentials')
-//       }
-//       else{
-//           console.log('acc found');
-//           console.log(username);
-//           res.send(`Welcome back, ${username}!`)
-//       }
-//   });
-// })
 
 // listen to server
 app.listen(port, () => console.log("Server started on port " + port));

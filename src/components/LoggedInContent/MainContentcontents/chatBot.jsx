@@ -48,13 +48,13 @@ const chatBot = () => {
 
   // Creating our own theme
   const theme = {
-    background: "#C9FF8F",
-    headerBgColor: "#197B22",
+    background: "#f2caee",
+    headerBgColor: "#7e22ce",
     headerFontSize: "20px",
-    botBubbleColor: "#0F3789",
+    botBubbleColor: "#7e22ce",
     headerFontColor: "white",
     botFontColor: "white",
-    userBubbleColor: "#FF5733",
+    userBubbleColor: "green",
     userFontColor: "white",
   };
 

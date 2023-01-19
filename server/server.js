@@ -6,11 +6,11 @@ const port = 5000;
 
 const app = express();
 app.use(express.json());
-app.use(cors());  
+app.use(cors()); 
 
 // EXPRESS
-app.use('/static', express.static('static'));
-app.use(express.urlencoded())
+// app.use('/static', express.static('static'));
+app.use(express.urlencoded({ extended: true }));
 
 // MONGOOSE
 mongoose.set('strictQuery', true);
@@ -36,6 +36,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/signup", (req, res) => {
+  console.log(req.body);
   var myData = new Log(req.body)
   myData.save().then(()=>{
     console.log('done');
@@ -53,14 +54,15 @@ app.post('/login', (req, res)=>{
   console.log(req.body);
 
   Log.find({username: `${username}`}, {password: `${password}`}, (err, docs)=>{
-      if(err){
+      if(docs.length == 0){
           console.log('acc not found');
           res.status(400).send('Invalid credentials')
       }
       else{
           console.log('acc found');
           console.log(username);
-          res.send(`Welcome back, ${username}!`)
+          const data = true;
+          res.json(data);
       }
   });
 })

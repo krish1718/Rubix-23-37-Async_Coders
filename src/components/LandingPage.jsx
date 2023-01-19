@@ -2,6 +2,10 @@ import React, { useRef } from "react";
 import { useState } from "react";
 import { motion, useScroll } from "framer-motion";
 import image from "../assets/Landingpageimagejpg.jpg";
+import exercise from "../assets/exercise.jpg";
+import yoga from "../assets/yoga.jpg";
+import meditation from "../assets/meditation.jpg";
+import socialize from "../assets/socialize.jpg";
 
 const LandingPage = ({ setLandingpagevisibility }) => {
   const ref = useRef(null);
@@ -9,31 +13,19 @@ const LandingPage = ({ setLandingpagevisibility }) => {
 
   return (
     <div>
-      <div>
-        {/* <iframe
-          //   width="853"
-          //   height="480"
-          src={`https://www.youtube.com/embed/PUDsAnFjORo`}
-          //   frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="Embedded youtube"
-          className="w-full h-[90vh]"
-        /> */}
-      </div>
       {/* // Landing Page  */}
       {/* // First page  */}
       <div className="min-h-[90vh] mt-[2vh]">
-        <section class="text-gray-600 body-font">
-          <div class="container mx-auto flex px-5 pt-10 pb-24 md:flex-row flex-col items-center">
-            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-              <div class="text-7xl mb-4 font-bold font-serif text-gray-900">
+        <section className="text-gray-600 body-font">
+          <div className="container mx-auto flex px-5 pt-10 pb-24 md:flex-row flex-col items-center">
+            <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+              <div className="text-7xl mb-4 font-bold font-serif text-gray-900">
                 Improving
               </div>
-              <div className="text-black text-5xl font-bold font-serif">
+              <div className="text-purple-700 text-5xl font-bold font-serif">
                 Mental Care
               </div>
-              <p class="my-8 leading-relaxed">
+              <p className="my-8 leading-relaxed">
                 Making it through life's toughest moments, Together. Your help
                 is just few clicks away. Let us know more about you by taking a
                 survey.
@@ -44,13 +36,10 @@ const LandingPage = ({ setLandingpagevisibility }) => {
               >
                 Get started
               </button>
-              <div>
-                <div className="m-5 ml-8 cursor-pointer">Scroll down</div>
-              </div>
             </div>
-            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
               <img
-                class="object-cover object-center rounded w-[50vw]"
+                className="object-cover object-center rounded w-[50vw]"
                 alt="hero"
                 src={image} // src="https://imgs.search.brave.com/8AQMBmc9e8R9nvgvTM-HgO5gSE4XHJtuigq7HZ13_V4/rs:fit:811:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5q/R1VoVGZ4dElnVnJB/UXhyX0Y2QjVBSGFF/ViZwaWQ9QXBp"
               />
@@ -60,7 +49,7 @@ const LandingPage = ({ setLandingpagevisibility }) => {
       </div>
       {/* // Second Part  */}
       <div className="min-h-[90vh] ">
-        <section class="text-gray-600 body-font">
+        <section className="text-gray-600 body-font">
           <div className="mb-5">
             <div className="text-5xl font-bold font-serif text-black ml-[10vw]">
               Thousands of highly
@@ -69,19 +58,19 @@ const LandingPage = ({ setLandingpagevisibility }) => {
               rated, verified experts.
             </div>
           </div>
-          <div class="container mx-auto flex px-5 pt-5 pb-24 md:flex-row flex-col items-center">
-            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+          <div className="container mx-auto flex px-5 pt-5 pb-24 md:flex-row flex-col items-center">
+            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
               <img
-                class="object-cover w-full md:w-[400px] mx-auto object-center rounded"
+                className="object-cover w-full md:w-[400px] mx-auto object-center rounded"
                 alt="hero"
-                src="https://media.licdn.com/dms/image/C4E03AQHZ-HVEPkVotQ/profile-displayphoto-shrink_100_100/0/1646718706286?e=1679529600&v=beta&t=Dfg-myw3nTPLVysgzN_milPL8dSYF-CvwtC-sxQ7R2Q"
+                src="https://www.kauveryhospital.com/doctorimage/recent/Dr-Raghuram---Cardio-thoracic-surgery2019-02-18%2012:58:54pm.jpg"
               />
             </div>
-            <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-              <h1 class="title-font text-4xl font-bold font-serif text-gray-900">
-                Shreyans Jain
+            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+              <h1 className="title-font text-4xl font-bold font-serif text-gray-900">
+                Rahul Sharma
               </h1>
-              <p class="">Consultant</p>
+              <p className="">Consultant</p>
               {/* // Stars  */}
               <span className="flex items-center">
                 <svg
@@ -173,7 +162,7 @@ const LandingPage = ({ setLandingpagevisibility }) => {
                       d="M4.5 12.75l6 6 9-13.5"
                     />
                   </svg>
-                  490 satisfied customers
+                  25 years of experience
                 </div>
                 <div className="flex flex-row">
                   <svg
@@ -190,14 +179,14 @@ const LandingPage = ({ setLandingpagevisibility }) => {
                       d="M4.5 12.75l6 6 9-13.5"
                     />
                   </svg>
-                  490 satisfied customers
+                  Licensed therapist
                 </div>
               </div>
-              <div class="flex justify-center my-8">
-                <button class="text-white bg-black hover:bg-gray-700 transition ease-in font-semibold border-0 py-2 px-6 rounded-full text-lg">
+              <div className="flex justify-center my-8">
+                <button className="text-white bg-black hover:bg-gray-700 transition ease-in font-semibold border-0 py-2 px-6 rounded-full text-lg">
                   Reviews
                 </button>
-                <button class="ml-4 text-gray-700 bg-gray-100 hover:bg-gray-200 transition ease-in font-semibold py-2 px-6 rounded-full text-lg">
+                <button className="ml-4 text-gray-700 bg-gray-100 hover:bg-gray-200 transition ease-in font-semibold py-2 px-6 rounded-full text-lg">
                   Linkedin
                 </button>
               </div>
@@ -207,9 +196,9 @@ const LandingPage = ({ setLandingpagevisibility }) => {
       </div>
       {/* // Third Part  */}
       <div className="min-h-[90vh]">
-        <section class="text-gray-600 body-font">
-          <div class="container mx-auto flex px-5 py-2 pt-10 md:flex-row flex-col items-center">
-            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <section className="text-gray-600 body-font">
+          <div className="container mx-auto flex px-5 py-2 pt-10 md:flex-row flex-col items-center">
+            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
               <div className="text-5xl font-bold font-serif text-black">
                 Improve your
               </div>
@@ -217,14 +206,14 @@ const LandingPage = ({ setLandingpagevisibility }) => {
                 physical mental health.
               </div>
             </div>
-            <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-              <p class="mb-8 text-lg font-semibold">
+            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+              <p className="mb-8 text-lg font-semibold">
                 Here are some tips to help you get started with self-care. Even
                 small acts of self-care in your daily life can have a big
                 impact.
               </p>
-              <div class="flex justify-center">
-                <button class="text-white bg-black hover:bg-gray-700 transition ease-in font-semibold border-0 py-2 px-6 rounded-full text-lg">
+              <div className="flex justify-center">
+                <button className="text-white bg-black hover:bg-gray-700 transition ease-in font-semibold border-0 py-2 px-6 rounded-full text-lg">
                   See all tips
                 </button>
               </div>
@@ -344,7 +333,7 @@ const LandingPage = ({ setLandingpagevisibility }) => {
               <li className="mx-5 min-w-[400px]">
                 <div className="border drop-shadow rounded-xl py-3 px-7">
                   <img
-                    src="https://imgs.search.brave.com/akq9_jHYZH81QGbZ_5vnvFiiEo45LmbROSo8kPLv1Iw/rs:fit:626:626:1/g:ce/aHR0cHM6Ly9pbWFn/ZS5mcmVlcGlrLmNv/bS9mcmVlLXZlY3Rv/ci9oZWFsdGgtZml0/bmVzcy1jYXJ0b29u/XzI0NjQwLTI1NzA3/LmpwZw"
+                    src={exercise}
                     alt=""
                     className="h-[40vh] object-contain"
                   />
@@ -377,16 +366,16 @@ const LandingPage = ({ setLandingpagevisibility }) => {
               <li className="mx-5 min-w-[400px]">
                 <div className="border drop-shadow rounded-xl py-3 px-7">
                   <img
-                    src="https://imgs.search.brave.com/akq9_jHYZH81QGbZ_5vnvFiiEo45LmbROSo8kPLv1Iw/rs:fit:626:626:1/g:ce/aHR0cHM6Ly9pbWFn/ZS5mcmVlcGlrLmNv/bS9mcmVlLXZlY3Rv/ci9oZWFsdGgtZml0/bmVzcy1jYXJ0b29u/XzI0NjQwLTI1NzA3/LmpwZw"
+                    src={yoga}
                     alt=""
-                    className="h-[40vh] object-contain"
+                    className="h-[35vh] mx-auto my-4 object-cover rounded-xl"
                   />
                   <div className="font-serif font-bold text-2xl mb-3">
-                    Get regular exercise.
+                    Yoga.
                   </div>
                   <div>
-                    Just 30 minutes of walking every day can help boost your
-                    mood and improve health.
+                    Yoga can help overcome your worries and fears by calming
+                    your center and allowing you to focus on the present.
                   </div>
                   <button className="my-3 font-bold flex flex-row">
                     Learn more
@@ -410,16 +399,16 @@ const LandingPage = ({ setLandingpagevisibility }) => {
               <li className="mx-5 min-w-[400px]">
                 <div className="border drop-shadow rounded-xl py-3 px-7">
                   <img
-                    src="https://imgs.search.brave.com/akq9_jHYZH81QGbZ_5vnvFiiEo45LmbROSo8kPLv1Iw/rs:fit:626:626:1/g:ce/aHR0cHM6Ly9pbWFn/ZS5mcmVlcGlrLmNv/bS9mcmVlLXZlY3Rv/ci9oZWFsdGgtZml0/bmVzcy1jYXJ0b29u/XzI0NjQwLTI1NzA3/LmpwZw"
+                    src={meditation}
                     alt=""
                     className="h-[40vh] object-contain"
                   />
                   <div className="font-serif font-bold text-2xl mb-3">
-                    Get regular exercise.
+                    Mindfulness Meditation.
                   </div>
                   <div>
-                    Just 30 minutes of walking every day can help boost your
-                    mood and improve health.
+                    Mindful breathing allows us to return to and stay in the
+                    present.
                   </div>
                   <button className="my-3 font-bold flex flex-row">
                     Learn more
@@ -443,17 +432,14 @@ const LandingPage = ({ setLandingpagevisibility }) => {
               <li className="mx-5 min-w-[400px]">
                 <div className="border drop-shadow rounded-xl py-3 px-7">
                   <img
-                    src="https://imgs.search.brave.com/akq9_jHYZH81QGbZ_5vnvFiiEo45LmbROSo8kPLv1Iw/rs:fit:626:626:1/g:ce/aHR0cHM6Ly9pbWFn/ZS5mcmVlcGlrLmNv/bS9mcmVlLXZlY3Rv/ci9oZWFsdGgtZml0/bmVzcy1jYXJ0b29u/XzI0NjQwLTI1NzA3/LmpwZw"
+                    src={socialize}
                     alt=""
                     className="h-[40vh] object-contain"
                   />
                   <div className="font-serif font-bold text-2xl mb-3">
-                    Get regular exercise.
+                    Socialize!
                   </div>
-                  <div>
-                    Just 30 minutes of walking every day can help boost your
-                    mood and improve health.
-                  </div>
+                  <div>Reconnect with your friends and family.</div>
                   <button className="my-3 font-bold flex flex-row">
                     Learn more
                     <svg
@@ -516,7 +502,7 @@ const LandingPage = ({ setLandingpagevisibility }) => {
           <div className="text-5xl font-serif font-bold max-w-[40vw]">
             What our clients say about us
           </div>
-          <button class="text-white bg-black hover:bg-gray-700 h-fit transition ease-in font-semibold border-0 py-2 px-6 rounded-full text-lg">
+          <button className="text-white bg-black hover:bg-gray-700 h-fit transition ease-in font-semibold border-0 py-2 px-6 rounded-full text-lg">
             All reviews
           </button>
         </div>

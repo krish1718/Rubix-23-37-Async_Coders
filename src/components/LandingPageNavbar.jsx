@@ -7,9 +7,9 @@ const LandingPageNavbar = ({ setLandingpagevisibility }) => {
     <>
       <div className="z-20 sticky top-0 bg-[#fff4e1]">
         <div className="flex justify-between p-4 items-center">
-          <div className="font-bold font-serif">Ummeed</div>
+          <div className="font-bold font-serif">Unwind</div>
           <div className="flex flex-row">
-            {/* <div to="/" className="mx-2 hover:text-green-500">
+            {/* <div to="/" className="mx-2 hover:text-purple-500">
             <div className="inline-block peer flex-row">
               Hello, {username ? username : "User"}
               <svg
@@ -18,7 +18,7 @@ const LandingPageNavbar = ({ setLandingpagevisibility }) => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-3 h-3 inline-block ml-2 border rounded-full border-green-500 my-auto peer-hover:border-green-500"
+                className="w-3 h-3 inline-block ml-2 border rounded-full border-purple-500 my-auto peer-hover:border-purple-500"
               >
                 <path
                   strokeLinecap="round"
@@ -35,7 +35,7 @@ const LandingPageNavbar = ({ setLandingpagevisibility }) => {
                 <div className="font-semibold text-sm my-2">Your Lists</div>
                 <div
                   onClick={() => setLoginView(true)}
-                  className="text-xs cursor-pointer hover:underline hover:text-green-500"
+                  className="text-xs cursor-pointer hover:underline hover:text-purple-500"
                 >
                   Logout
                 </div>
@@ -45,25 +45,25 @@ const LandingPageNavbar = ({ setLandingpagevisibility }) => {
           </div> */}
             <div
               onClick={() => setLandingpagevisibility(false)}
-              className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
+              className="cursor-pointer w-fit inline-block mx-4 hover:text-purple-500"
             >
               Get Help
             </div>
             <div
               onClick={() => setLandingpagevisibility(false)}
-              className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
+              className="cursor-pointer w-fit inline-block mx-4 hover:text-purple-500"
             >
               Community
             </div>
             <div
               to="/"
-              className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
+              className="cursor-pointer w-fit inline-block mx-4 hover:text-purple-500"
             >
               About Us
             </div>
             <div
               onClick={() => setLandingpagevisibility(false)}
-              className="cursor-pointer w-fit inline-block mx-4 hover:text-green-500"
+              className="cursor-pointer w-fit inline-block mx-4 hover:text-purple-500"
             >
               Contact Us
             </div>
@@ -71,7 +71,7 @@ const LandingPageNavbar = ({ setLandingpagevisibility }) => {
           <div className="flex flex-row items-center">
             <div
               onClick={() => setLandingpagevisibility(false)}
-              className="mx-2 cursor-pointer h-fit text-white font-semibold py-1 px-3 rounded-md bg-gradient-to-r from-blue-600 to-green-600"
+              className="mx-2 cursor-pointer h-fit text-white font-semibold py-1 px-3 rounded-md bg-purple-700"
             >
               Login
             </div>

@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { usernameContext, passwordContext } from "../../App";
 import axios from "axios";
 import Navigation from "../LoggedInContent/Navigation";
+import image from "../../assets/LoginPageImage.jpg";
 
 export const LoginForm = ({ setLoginView }) => {
   //   const [username, setUsername] = useState();
@@ -31,7 +32,7 @@ export const LoginForm = ({ setLoginView }) => {
           username: username,
           password: password,
         })
-        // .then((response) => (response = response.json()))
+        .then((response) => console.log("hii"))
         .catch((error) => {
           console.log(error);
         });
@@ -39,13 +40,22 @@ export const LoginForm = ({ setLoginView }) => {
 
   // axios login
   useEffect(() => {
+    // console.log(username);
     if (username && password)
+      // console.log('chalu hai');
       axios
         .post("http://localhost:5000/login", {
           username: username,
           password: password,
         })
-        // .then((response) => (response = response.json()))
+        .then(async (response) => {
+          alert("hi");
+          const body = await response.json();
+          console.log(body);
+        })
+        // .then(async function getDetails(response){
+        //   const body = await response.json();
+        // })
         .catch((error) => {
           console.log(error);
         });
@@ -106,8 +116,26 @@ export const LoginForm = ({ setLoginView }) => {
   return (
     <div>
       <section className="bg-gray-200 min-h-screen p-6 items-center w-screen">
-        <div className="flex flex-col mx-auto justify-center lg:flex-row xl:flex-row">
-          <div className="bg-white lg:w-[50%] xl:w-[50%] max-w-2xl p-5 rounded-l-lg">
+        <div className="flex flex-col mx-auto justify-center lg:flex-row xl:flex-row mt-[55px]">
+          <div className="rounded-l-lg flex lg:w-[50%] xl:w-[50%] max-w-xl items-center bg-white">
+            {/* <div className="text-white my-auto px-16 py-40">
+              <div className="inline-block">
+                <h4 className="my-4 text-3xl font-bold">
+                  Your Mental Health Matters
+                </h4>
+                <p className="text-md mt-2">
+                  We do not use cookies, tracking scripts or any third party in
+                  browser software.
+                </p>
+              </div>
+            </div> */}
+            <img
+              className="h-[50vh] object-contain mx-auto"
+              src={image}
+              alt=""
+            />
+          </div>
+          <div className="bg-white lg:w[50%] xl:w[50%] pr-[80px] w-1/2 max-w-xl p-5 rounded-r-lg">
             <div className="mt-[10vh] my-auto">
               <div className="text-center mx-auto">
                 <img
@@ -116,19 +144,20 @@ export const LoginForm = ({ setLoginView }) => {
                   src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
                 />
                 <h4 className="mt-1 text-xl font-bold mb-5 pb-1">
-                  Welcome to Meowify
+                  Welcome to Unwind
                 </h4>
               </div>
-              <form>
+              <form action="http://localhost:5000/login" method="post">
                 <p className="text-lg my-3 text-center">
                   Please login to your account
                 </p>
 
                 <div className="form-outline my-4 mx-auto w-fit">
                   <input
-                    type="name"
+                    type="text"
+                    name="username"
                     id="form2Example11"
-                    className="form-control drop-shadow-md mx-auto md:w-[400px] p-2 rounded-lg border-2 hover:border-[#ee7724] "
+                    className="form-control drop-shadow-md mx-auto md:w-[400px] p-2 rounded-lg border-2 hover:border-purple-700 "
                     placeholder="Username"
                     ref={usernameRef}
                     // onChange={(e) => {
@@ -143,8 +172,9 @@ export const LoginForm = ({ setLoginView }) => {
                 <div className="form-outline mb-4 mx-auto w-fit">
                   <input
                     type="password"
+                    name="password"
                     id="form2Example22"
-                    className="form-control drop-shadow-md mx-auto md:w-[400px] p-2 rounded-lg border-2 hover:border-[#ee7724]"
+                    className="form-control drop-shadow-md mx-auto md:w-[400px] p-2 rounded-lg border-2 hover:border-purple-700"
                     placeholder="Master Password"
                     ref={passwordRef}
                     onKeyDown={(e) => handleEnter(e)}
@@ -159,7 +189,7 @@ export const LoginForm = ({ setLoginView }) => {
 
                 {/* Error */}
                 {error && (
-                  <div className="text-red-600 font-semibold">
+                  <div className="text-red-600 text-center font-semibold">
                     Error, wrong details!
                   </div>
                 )}
@@ -167,8 +197,8 @@ export const LoginForm = ({ setLoginView }) => {
                 {logIn ? (
                   <div className="text-center pt-1 my-5 pb-1">
                     <button
-                      className="block drop-shadow-xl fa-lg bg-gradient-to-r from-[#ee7724] via-red-600 via-[#dd3675] to-[#b44593] px-4 py-2 rounded-lg text-white mx-auto mb-3"
-                      type="button"
+                      className="block drop-shadow-xl fa-lg hover:bg-purple-800 transition ease-in bg-purple-700 px-4 py-2 rounded-lg text-white mx-auto mb-3"
+                      type="submit"
                       onClick={() => {
                         //   navigator.vibrate(50);
                         //   login.setLogin("true");
@@ -190,7 +220,7 @@ export const LoginForm = ({ setLoginView }) => {
                 ) : (
                   <div className="text-center pt-1 my-5 pb-1">
                     <button
-                      className="block drop-shadow-xl fa-lg bg-gradient-to-r from-[#ee7724] via-red-600 via-[#dd3675] to-[#b44593] px-4 py-2 rounded-lg text-white mx-auto mb-3"
+                      className="block drop-shadow-xl fa-lg hover:bg-purple-800 transition ease-in bg-purple-700 px-4 py-2 rounded-lg text-white mx-auto mb-3"
                       type="button"
                       onClick={() => {
                         //   navigator.vibrate(50);
@@ -231,7 +261,6 @@ export const LoginForm = ({ setLoginView }) => {
                     <div
                       onClick={() => {
                         // navigator.vibrate(50);
-                        // Signup.setSignUpstate("true");
                         setLogIn(false);
                       }}
                       className="hover:underline text-red-500 cursor-pointer"
@@ -241,19 +270,6 @@ export const LoginForm = ({ setLoginView }) => {
                   </div>
                 )}
               </form>
-            </div>
-          </div>
-          <div className="rounded-r-lg flex lg:w-[50%] xl:w-[50%] max-w-2xl items-center bg-gradient-to-r from-[#ee7724] via-red-600 to-[#b44593]">
-            <div className="text-white my-auto px-16 py-40">
-              <div className="inline-block">
-                <h4 className="my-4 text-3xl font-bold">
-                  Your Mental Health Matters
-                </h4>
-                <p className="text-md mt-2">
-                  We do not use cookies, tracking scripts or any third party in
-                  browser software.
-                </p>
-              </div>
             </div>
           </div>
         </div>
