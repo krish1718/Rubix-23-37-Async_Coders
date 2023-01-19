@@ -33,17 +33,22 @@ var surveySchema = new mongoose.Schema({
 
 //Model
 var Survey = mongoose.model('Survey', surveySchema);
-
 app.post('/survey', (req, res)=>{
-    console.log(req.body);
-    // var myData = new Survey(req.body);
-    // myData.save().then(()=>{
-    //     console.log('done');
-    //     res.send('This data has been saved to the database')
-    // }).catch(()=>{
-    //     console.log('not done');
-    //     res.status(400).send('Item was not saved to the database')
-    // });
+    var details = {};
+    details.name = req.body.fname.username;
+    details.dob = req.body.dob;
+    details.gender = req.body.gender;
+    details.med = req.body.med;
+    details.type = req.body.type;
+
+    var myData = new Survey(details);
+    myData.save().then(()=>{
+        console.log('done');
+        res.send('This data has been saved to the database')
+    }).catch(()=>{
+        console.log('not done');
+        res.status(400).send('Item was not saved to the database')
+    });
 })
 
 app.listen(port, () => console.log("Server started on port " + port));

@@ -28,6 +28,7 @@ const [clicked,setClicked] = useState(false)
 
   useEffect(()=>{    
     if (fname && dob && gender && med && type && clicked){
+      console.log(fname, dob, gender, med, type);
       axios
         .post("http://localhost:5000/survey", {
           fname:fname,
@@ -36,8 +37,8 @@ const [clicked,setClicked] = useState(false)
           med:med,
           type:type
         })
-        .then(async (response) => {
-          alert('Submitted')
+        .then((response)=>{
+          alert('submitted')
         })
         .catch((error) => {
           console.log(error);

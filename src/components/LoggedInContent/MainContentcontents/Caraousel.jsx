@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Carousel from "react-material-ui-carousel";
+import { Navigate } from "react-router-dom";
 import ScoreCalc from "./ScoreCalc";
 
 const data = [
@@ -86,16 +87,19 @@ const Caraousel = () => {
     </>
   ) : (
     <>
-      <div className="text-5xl text-center font-serif font-bold">
+      {/* <div className="text-5xl text-center font-serif font-bold">
         Thanks for your response
       </div>
       <div className="text-center text-xl font-semibold mb-10 mt-10">
-        {/* Your score(Depression): {sumDepression}
+        Your score(Depression): {sumDepression}
         <br />
         Your score(Anxeity): {sumAnxeity}
-        <br /> */}
-        <ScoreCalc sumD={sumDepression} suma={sumAnxeity} />
-      </div>
+        <br />
+        <ScoreCalc sum={sumDepression} />
+        <br />
+        <ScoreCalc sum={sumAnxeity} />
+      </div> */}
+      <Navigate to="/profile" replace={true} />
     </>
   );
 };

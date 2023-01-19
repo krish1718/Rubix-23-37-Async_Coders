@@ -24,7 +24,7 @@ const Breathe = () => {
             setPer(per - 1.7);
           }
         }
-      }, 200);
+      }, 1000);
       return () => {
         clearInterval(myInterval);
       };

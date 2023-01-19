@@ -12,6 +12,10 @@ import Yoga from "./MainContentcontents/Yoga";
 import MorningExercises from "./MainContentcontents/MorningExercises";
 import Games from "./MainContentcontents/Games";
 import Therapist from "./MainContentcontents/Therapist";
+import Journal from "./MainContentcontents/Journal";
+import PaymentMethod from "./MainContentcontents/Payments/PaymentMethod";
+import PaymentPage from "./MainContentcontents/Payments/PaymentPage";
+import OTPpage from "./MainContentcontents/Payments/OTPpage";
 
 const cartContext = createContext({
   cartItems: [],
@@ -31,7 +35,7 @@ const MainContent = () => {
         <Contact />
       </div> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/community" element={<Community />} />
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
@@ -41,7 +45,12 @@ const MainContent = () => {
         <Route path="/yoga" element={<Yoga />} />
         <Route path="/therapist" element={<Therapist />} />
         <Route path="/games" element={<Games />} />
+        <Route path="/journal" element={<Journal />} />
         <Route path="/contact" element={<Contact />} />
+        {/* Payment  */}
+        <Route path="/paymentmethod/:id" element={<PaymentMethod />} />
+        <Route path="/paymentpage" element={<PaymentPage />} />
+        <Route path="/OTPpage" element={<OTPpage />} />
       </Routes>
     </>
   );

@@ -75,9 +75,7 @@ function App() {
                   <LoginForm setLoginView={setLoginView} />
                 ) : (
                   <Navigation setLoginView={setLoginView} />
-                )
-                // <Navigation setLoginView={setLoginView} />
-                }
+                )}
               </div>
               {/* <div>{loginView ? <LoginForm2 /> : <Navigation />}</div> */}
             </AdminPasswordContext.Provider>

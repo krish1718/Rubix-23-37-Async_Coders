@@ -1,6 +1,7 @@
 import React from "react";
 import Breathe from "./Breathe";
 import aboutImg from "../../../assets/aboutImg.jpg";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -31,7 +32,7 @@ const About = () => {
             </div>
           </div>
           <ul className="flex h-screen">
-            <li className="mx-5 min-w-[400px]">
+            <li className="mx-5 min-w-[400px] hover:scale-110 transition ease-in">
               <div className=" rounded-xl py-3 px-7">
                 <img
                   src="https://img.freepik.com/free-vector/group-young-people-posing-photo_52683-18823.jpg?w=740&t=st=1674102973~exp=1674103573~hmac=18cf248395ba675c398b7a37e0d87fc99f6da7dc146b82b8029db576da130c6ds"
@@ -48,7 +49,7 @@ const About = () => {
                 </div>
               </div>
             </li>
-            <li className="mx-5 min-w-[400px]">
+            <li className="mx-5 min-w-[400px] hover:scale-110 transition ease-in">
               <div className="rounded-xl py-3 px-7">
                 <img
                   src="https://img.freepik.com/free-vector/business-team-discussing-ideas-startup_74855-4380.jpg?w=1060&t=st=1674102558~exp=1674103158~hmac=df8cf98b1b596b11b2e56dcbf7a362cd65c1bb7b42b391f04b9ab866b92a2498"
@@ -65,7 +66,7 @@ const About = () => {
                 </div>
               </div>
             </li>
-            <li className="mx-5 min-w-[400px]">
+            <li className="mx-5 min-w-[400px] hover:scale-110 transition ease-in">
               <div className="rounded-xl py-3 px-7">
                 <img
                   src="https://previews.123rf.com/images/tynyuk/tynyuk1902/tynyuk190200008/125007787-meditating-man-over-isolated-background-keep-calm-vector-illustration-in-cartoon-style.jpg"
@@ -84,15 +85,40 @@ const About = () => {
             </li>
           </ul>
           <ul className="flex mx-10">
-            <li></li>
-            <li>
+            <motion.li
+              initial={{ x: "-100%", opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              //   exit={{
+              //     x: "-100%",
+              //     opacity: 0,
+              //     transition: { duration: 0, delay: 0 },
+              //   }}
+              transition={{
+                duration: 0.5,
+                delay: 0.3,
+                ease: "easeOut",
+              }}
+            >
               <div className="mx-10 rounded-xl flex items-center justify-center title-font text-8xl mb-4 font-medium text-black text-center w-[40vw] h-[70vh] bg-purple-200">
                 <div className="">
                   <img src={aboutImg} alt="" />
                 </div>
               </div>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              initial={{ x: "100%", opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              //   exit={{
+              //     x: "-100%",
+              //     opacity: 0,
+              //     transition: { duration: 0, delay: 0 },
+              //   }}
+              transition={{
+                duration: 0.5,
+                delay: 0.3,
+                ease: "easeOut",
+              }}
+            >
               <div className="h-screen">
                 <div className="mx-10 mt-10 text-purple-600 text-center font-serif font-bold text-2xl mb-3 w-[40vw]">
                   Unwind: Helping people with mental health care around the
@@ -109,7 +135,7 @@ const About = () => {
                   Kaiser Permanente.
                 </div>
               </div>
-            </li>
+            </motion.li>
           </ul>
           {/* <div className="flex">
             <div>

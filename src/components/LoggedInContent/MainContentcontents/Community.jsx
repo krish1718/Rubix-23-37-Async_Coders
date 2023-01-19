@@ -122,7 +122,7 @@ const Community = () => {
               onClick={() => {
                 setmessage(inputRef.current.value);
               }}
-              className="ml-5 bg-green-500 rounded-lg px-3 py-2 font-semibold text-white"
+              className="ml-5 bg-green-500 hover:bg-green-600 transition ease-in rounded-lg px-3 py-2 font-semibold text-white"
             >
               Send
             </button>

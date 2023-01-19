@@ -64,7 +64,7 @@ const Header = ({ setLoginView }) => {
             Community
           </NavLink>
           <NavLink
-            to="/"
+            to="/therapist"
             className="mx-4 hover:scale-110 transition ease-in hover:text-purple-500"
           >
             Get Help

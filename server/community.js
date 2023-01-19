@@ -35,7 +35,7 @@ var Group2 = mongoose.model('Group2', commSchema);
 app.post("/community", (req, res) => {
     var groupname = req.query.chat;
 
-    if(groupname == 'Group1'){
+    if(groupname == 'TSEC students'){
         var myData = new Group1(req.body)
         myData.save().then(()=>{
             console.log('done');
@@ -60,10 +60,12 @@ app.post("/community", (req, res) => {
 app.get("/community", (req, res)=>{
     var groupname = req.query.chat;
     groupname = groupname.toLowerCase();
+    console.log(groupname);
     let view;
     
     async function viewMessages(){
         view = await db.collection(`${groupname}`).find().toArray();
+        // console.log(view);
         res.json(view);
     }
     viewMessages();

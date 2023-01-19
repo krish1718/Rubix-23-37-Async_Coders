@@ -6,6 +6,7 @@ import axios from "axios";
 import Navigation from "../LoggedInContent/Navigation";
 import image from "../../assets/LoginPageImage.jpg";
 import logoimage from "../../assets/unwind-logo.png";
+import { Navigate } from "react-router-dom";
 
 export const LoginForm = ({ setLoginView }) => {
   //   const [username, setUsername] = useState();
@@ -207,6 +208,7 @@ export const LoginForm = ({ setLoginView }) => {
                         ) {
                           setUsername(usernameRef.current.value);
                           // setPassword(passwordRef.current.value);
+                          <Navigate to="/" replace={true} />;
                           setLoginView(false);
                         } else {
                           setError(true);
@@ -406,4 +408,4 @@ export const LoginForm = ({ setLoginView }) => {
   //       )}
   //     </div>
   //   );
-}
+};
