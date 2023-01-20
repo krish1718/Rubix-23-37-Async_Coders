@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState,useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import { usernameContext, passwordContext } from "../../../App";
 import days10 from "../../../assets/days10.jpg";
@@ -7,24 +7,33 @@ import days50 from "../../../assets/days50.jpg";
 import days100 from "../../../assets/days100.jpg";
 import year1 from "../../../assets/year1.jpg";
 import Task from "./Task";
+import MyChart from "./MyChart";
 
-const Profile = () => {
+const Profile = ({ sum, setSum, currentCoins, setCurrentCoins }) => {
   const { username, setUsername } = useContext(usernameContext);
+  //   const [currentCoins, setCurrentCoins] = useState(10000);
+
   return (
     <div>
       <div className="font-quicksand flex min-h-screen bg-gray-200">
         <div className="w-1/4 pl-3">
-          <div className="bg-white my-3 py-1 px-3 pl-4 rounded-xl min-h-[83vh]">
-            <div className="text-center font-quicksand font-semibold text-xl -ml-1 mb-1">Profile page</div>
+          <div className="bg-white my-3 py-1 px-3 pl-3 rounded-xl min-h-[83vh]">
+            <div className="text-center font-quicksand font-semibold text-xl -ml-1 mb-1">
+              Profile page
+            </div>
             <img
-              className="mx-20 w-[170px] h-[170px] rounded-xl my-4"
+              className="mx-auto w-[170px] h-[170px] rounded-xl my-4"
               src="https://dreamvilla.life/wp-content/uploads/2017/07/dummy-profile-pic.png"
               alt=""
             />
-            <div className="text-center font-quicksand font-semibold text-xl">{username}</div>
+            <div className="text-center font-quicksand font-semibold text-xl">
+              {username}
+            </div>
             <hr />
             <div>
-              <div className="font-semibold font-quicksand mt-7">Badges Earned</div>
+              <div className="font-semibold font-quicksand mt-7">
+                Badges Earned
+              </div>
               <div className="flex my-2 justify-evenly">
                 <img className="w-[65px] rounded-lg" src={days10} alt="" />
                 <img className="w-[65px] rounded-lg" src={days25} alt="" />
@@ -37,7 +46,7 @@ const Profile = () => {
               <div className="font-semibold font-quicksand mx-auto w-fit my-7 flex">
                 Your ZenCoins:
                 <div className="flex ml-3">
-                  10,000
+                  {currentCoins}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -70,22 +79,49 @@ const Profile = () => {
             <div className="font-semibold flex flex-row justify-between text-xl mb-1">
               <div>Latest tasks</div>
             </div>
-            <Task />
+            <Task
+              currentCoins={currentCoins}
+              setCurrentCoins={setCurrentCoins}
+            />
           </div>
           <div className="bg-white my-3 py-1 px-3 rounded-xl">
-            <div className="font-semibold text-xl my-3">Your mood</div>
-            <div className="flex flex-wrap">
-              <div className="mr-6 flex flex-row font-semibold bg-yellow-400 w-fit py-2 px-8 my-4 rounded-full">
-                <div>Emotional Burnout</div>
-                <div className="ml-4">70%</div>
+            <div className="font-semibold text-xl my-3">Your Stress</div>
+            <MyChart sum={sum} />
+            <div className="flex flex-wrap justify-between">
+              <div className="flex flex-wrap">
+                {/* <div className="mr-6 flex flex-row font-semibold bg-yellow-400 w-fit py-2 px-8 my-4 rounded-full">
+                  <div>Emotional Burnout</div>
+                  <div className="ml-4">70%</div>
+                </div> */}
+                {/* <div className="mr-6 flex flex-row text-white font-semibold bg-purple-600 w-fit py-2 px-8 my-4 rounded-full">
+                  <div>Anxiety</div>
+                  <div className="ml-4">30%</div>
+                </div> */}
+                {/* <div className="mr-6 flex flex-row font-semibold bg-pink-400 w-fit py-2 px-8 my-4 rounded-full">
+                  <div>Sum</div>
+                  <div className="ml-4">
+                    {sum[sum.length - 1]}
+                    {console.log(sum)}
+                  </div>
+                </div> */}
               </div>
-              <div className="mr-6 flex flex-row text-white font-semibold bg-purple-500 w-fit py-2 px-8 my-4 rounded-full">
-                <div>Anxiety</div>
-                <div className="ml-4">30%</div>
-              </div>
-              <div className="mr-6 flex flex-row font-semibold bg-pink-400 w-fit py-2 px-8 my-4 rounded-full">
-                <div>Irritation</div>
-                <div className="ml-4">40%</div>
+              <div>
+                {/* <div className="bg-purple-700 rounded-2xl p-2 -mt-7">
+                  <NavLink
+                    to="/dailysurvey"
+                    className="bg-purple-600 hover: inline-block font-bold rounded-lg p-3 text-white"
+                  >
+                    Take daily Survey
+                  </NavLink>
+                </div> */}
+                <div className="bg-red-700 rounded-xl pb-2 hover:pb-1 hover:-mt-4 transition ease-in -mt-5">
+                  <NavLink
+                    to="/dailysurvey"
+                    className="bg-red-600 inline-block font-bold rounded-lg p-3 text-white"
+                  >
+                    Take daily Survey
+                  </NavLink>
+                </div>
               </div>
             </div>
           </div>

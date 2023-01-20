@@ -6,14 +6,13 @@ import InitialQuestions from "./InitialQuestions";
 // import { Dialog, Transition } from "@headlessui/react";
 
 const Home = () => {
-
   const [initialquestions, setinitialquestions] = useState(true);
 
   return (
     <div>
       {/* <div>Previous Questions</div> */}
       {initialquestions ? (
-        <InitialQuestions setinitialquestions={setinitialquestions} />
+        <InitialQuestions initialquestions={initialquestions} setinitialquestions={setinitialquestions} />
       ) : (
         <Caraousel />
       )}

@@ -14,7 +14,7 @@ app.use(express.urlencoded())
 
 // MONGOOSE
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb://localhost:27017/prac', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://Rishab829:Kanchan%401@expresstry.wqhmyb0.mongodb.net/prac?retryWrites=true&w=majority', {useNewUrlParser: true});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -35,7 +35,8 @@ var Group2 = mongoose.model('Group2', commSchema);
 app.post("/community", (req, res) => {
     var groupname = req.query.chat;
 
-    if(groupname == 'TSEC students'){
+    // if(groupname == 'TSEC students'){
+    if(groupname == 'ConvoCare'){
         var myData = new Group1(req.body)
         myData.save().then(()=>{
             console.log('done');
@@ -58,17 +59,27 @@ app.post("/community", (req, res) => {
 });
 
 app.get("/community", (req, res)=>{
-    var groupname = req.query.chat;
-    groupname = groupname.toLowerCase();
-    console.log(groupname);
-    let view;
-    
-    async function viewMessages(){
-        view = await db.collection(`${groupname}`).find().toArray();
-        // console.log(view);
-        res.json(view);
+    var dummyname = req.query.chat;
+    console.log(dummyname);
+
+    if(dummyname == 'Group1'){
+        // dummyname = dummyname.toLowerCase();
+        let view;
+        async function viewMessages(){
+            view = await db.collection('group1').find().toArray();
+            res.json(view);
+        }
+        viewMessages();
     }
-    viewMessages();
+    else{
+        // dummyname = group2;
+        let view;
+        async function viewMessages(){
+            view = await db.collection('group2').find().toArray();
+            res.json(view);
+        }
+        viewMessages();
+    }
 })
 
 // listen to server

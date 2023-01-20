@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 // import Cart from "./MainContentcontents/Cart";
 import Contact from "./MainContentcontents/Contact";
 import Home from "./MainContentcontents/Home";
@@ -16,6 +16,7 @@ import Journal from "./MainContentcontents/Journal";
 import PaymentMethod from "./MainContentcontents/Payments/PaymentMethod";
 import PaymentPage from "./MainContentcontents/Payments/PaymentPage";
 import OTPpage from "./MainContentcontents/Payments/OTPpage";
+import DailySurvey from "./MainContentcontents/DailySurvey";
 
 const cartContext = createContext({
   cartItems: [],
@@ -23,6 +24,9 @@ const cartContext = createContext({
 });
 
 const MainContent = () => {
+  const [sum, setSum] = useState([24,17,23,13,15]);
+  const [currentCoins, setCurrentCoins] = useState(1000);
+
   return (
     <>
       {/* <div>
@@ -38,7 +42,17 @@ const MainContent = () => {
         <Route exact path="/" element={<Home />} />
         <Route path="/community" element={<Community />} />
         <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/profile"
+          element={
+            <Profile
+              sum={sum}
+              setSum={setSum}
+              currentCoins={currentCoins}
+              setCurrentCoins={setCurrentCoins}
+            />
+          }
+        />
         <Route path="/activities" element={<Activities />} />
         <Route path="/breathe" element={<Breathe />} />
         <Route path="/morningexercises" element={<MorningExercises />} />
@@ -47,6 +61,10 @@ const MainContent = () => {
         <Route path="/games" element={<Games />} />
         <Route path="/journal" element={<Journal />} />
         <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/dailysurvey"
+          element={<DailySurvey sum={sum} setSum={setSum} />}
+        />
         {/* Payment  */}
         <Route path="/paymentmethod/:id" element={<PaymentMethod />} />
         <Route path="/paymentpage" element={<PaymentPage />} />

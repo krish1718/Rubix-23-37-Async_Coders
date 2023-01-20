@@ -41,6 +41,22 @@ const Community = () => {
       });
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      axios
+        .get(`http://localhost:5000/community?chat=${groupname}`)
+        .then(function(response) {
+          alert('done')
+          setArray(response.data);
+          console.log(response.data);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+      
+    }, 4000);
+  });
+
   return (
     <>
       <div className="flex flex-row p-5 min-h-[90vh]">
@@ -49,17 +65,59 @@ const Community = () => {
           <hr />
           <div className="bg-gray-100 p-4 h-[88%]">
             <div className="">
-              <div
+              {/* <div
                 onClick={() => setgroupname("TSEC students")}
-                className="border bg-green-200 cursor-pointer border-green-500 rounded-lg my-2 p-2 font-semibold text-xl"
+                className={`border ${
+                  groupname == "TSEC students" ? "bg-[#67ff6a]" : "bg-green-200"
+                } cursor-pointer border-green-500 rounded-lg my-2 p-2 font-semibold text-xl`}
               >
                 <div>TSEC students</div>
               </div>
               <div
                 onClick={() => setgroupname("TSEC people")}
-                className="border bg-green-200 cursor-pointer border-green-500 rounded-lg my-2 p-2 font-semibold text-xl"
+                className={`border ${
+                  groupname == "TSEC people" ? "bg-[#67ff6a]" : "bg-green-200"
+                } cursor-pointer border-green-500 rounded-lg my-2 p-2 font-semibold text-xl`}
               >
                 <div>TSEC people</div>
+              </div> */}
+              <div
+                onClick={() => setgroupname("ConvoCare")}
+                className={`border ${
+                  groupname == "ConvoCare" ? "bg-[#67ff6a]" : "bg-green-200"
+                } cursor-pointer border-green-500 rounded-lg my-2 p-2 font-semibold text-xl`}
+              >
+                <div>ConvoCare</div>
+              </div>
+              <div
+                onClick={() => setgroupname("Healing Together")}
+                className={`border ${
+                  groupname == "Healing Together"
+                    ? "bg-[#67ff6a]"
+                    : "bg-green-200"
+                } cursor-pointer border-green-500 rounded-lg my-2 p-2 font-semibold text-xl`}
+              >
+                <div>Healing Together</div>
+              </div>
+              <div
+                onClick={() => setgroupname("Mending Mindsets")}
+                className={`border ${
+                  groupname == "Mending Mindsets"
+                    ? "bg-[#67ff6a]"
+                    : "bg-green-200"
+                } cursor-pointer border-green-500 rounded-lg my-2 p-2 font-semibold text-xl`}
+              >
+                <div>Mending Mindsets</div>
+              </div>
+              <div
+                onClick={() => setgroupname("Mental Health Awareness")}
+                className={`border ${
+                  groupname == "Mental Health Awareness"
+                    ? "bg-[#67ff6a]"
+                    : "bg-green-200"
+                } cursor-pointer border-green-500 rounded-lg my-2 p-2 font-semibold text-xl`}
+              >
+                <div>Mental Health Awareness</div>
               </div>
             </div>
           </div>

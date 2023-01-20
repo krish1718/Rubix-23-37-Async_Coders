@@ -39,10 +39,18 @@ const chatBot = () => {
         // When we need to show a number of
         // options to choose we create alist
         // like this
-        { value: 1, label: "View Courses" },
-        { value: 2, label: "Read Articles" },
+        { value: 1, label: "View Activities", trigger: "7" },
+        { value: 2, label: "Get help regarding therapy", trigger: "2" },
       ],
       end: true,
+    },
+    {
+      id: "7",
+      options: [
+        { value: 8, label: "Number 1", trigger: "4" },
+        { value: 9, label: "Number 2", trigger: "3" },
+        // { value: 10, label: "Number 3", trigger: "3" },
+      ],
     },
   ];
 

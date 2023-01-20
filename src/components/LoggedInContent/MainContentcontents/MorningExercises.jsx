@@ -6,16 +6,16 @@ import audio3 from "../../../assets/musics/audio3.mp3";
 import audio4 from "../../../assets/musics/audio4.mp3";
 import podcast1 from "../../../assets/musics/podcast1.m4a";
 import podcast2 from "../../../assets/musics/podcast2.m4a";
-import podcast3 from "../../../assets/musics/podcast3.m4a";
+import podcast3 from "../../../assets/musics/podcast4.m4a";
 
 const MorningExercises = () => {
   const [music, setMusic] = useState("audio1");
   const [podcast, setPodcast] = useState("podcast1");
   const handleClick = (e) => {
-    setMusic(e.target.textContent);
+    setMusic(e.target.id);
   };
   const handlePod = (e) => {
-    setPodcast(e.target.textContent);
+    setPodcast(e.target.id);
   };
   return (
     <div>
@@ -31,16 +31,16 @@ const MorningExercises = () => {
               alt=""
             />
             <div className="mt-5">
-              <div className="text-center cursor-pointer font-semibold" onClick={handleClick}>
+              <div id="audio1" className="text-center cursor-pointer font-semibold" onClick={handleClick}>
                 Audio 1
               </div>
-              <div className="text-center cursor-pointer font-semibold" onClick={handleClick}>
+              <div id="audio2" className="text-center cursor-pointer font-semibold" onClick={handleClick}>
                 Audio 2
               </div>
-              <div className="text-center cursor-pointer font-semibold" onClick={handleClick}>
+              <div id="audio3" className="text-center cursor-pointer font-semibold" onClick={handleClick}>
                 Audio 3
               </div>
-              <div className="text-center cursor-pointer font-semibold" onClick={handleClick}>
+              <div id="audio4" className="text-center cursor-pointer font-semibold" onClick={handleClick}>
                 Audio 4
               </div>
               <ReactAudioPlayer
@@ -68,13 +68,13 @@ const MorningExercises = () => {
               alt=""
             />
             <div className="mt-5">
-              <div className="text-center cursor-pointer font-semibold" onClick={handlePod}>
+              <div id="podcast1" className="text-center cursor-pointer font-semibold" onClick={handlePod}>
                 Podcast 1
               </div>
-              <div className="text-center cursor-pointer font-semibold" onClick={handlePod}>
+              <div id="podcast2" className="text-center cursor-pointer font-semibold" onClick={handlePod}>
                 Podcast 2
               </div>
-              <div className="text-center mb-10 cursor-pointer font-semibold" onClick={handlePod}>
+              <div id="podcast3" className="text-center mb-10 cursor-pointer font-semibold" onClick={handlePod}>
                 Podcast 3
               </div>
               <ReactAudioPlayer

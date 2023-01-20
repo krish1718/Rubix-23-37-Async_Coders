@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Task = () => {
+const Task = ({ currentCoins, setCurrentCoins }) => {
   const [items, setItems] = useState([]);
   const [inputText, setInputText] = useState("");
 
@@ -23,6 +23,7 @@ const Task = () => {
   }
 
   function deleteItem(i) {
+    setCurrentCoins(currentCoins + 20);
     setItems((prevItems) => {
       return prevItems.filter((item, index) => {
         return index !== i;

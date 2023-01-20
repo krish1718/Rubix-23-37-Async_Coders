@@ -1,5 +1,6 @@
 import React from "react";
 import { HashRouter as Router, Routes, NavLink } from "react-router-dom";
+import VoiceAssistant from "../VoiceAssistant";
 // import AdminContent from "./AdminContents/AdminContent";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -14,6 +15,7 @@ const Navigation = ({ setLoginView }) => {
         <MainContent />
         <Footer />
         <ChatBot />
+        {/* <VoiceAssistant /> */}
       </Router>
     </div>
   );

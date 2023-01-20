@@ -142,7 +142,7 @@ export default function PaymentPage() {
             <NavLink to="/OTPpage">
               <button className="bg-blue-500 hover:bg-blue-600 font-bold text-xl text-white w-full p-4 rounded-lg my-4">
                 {/* Pay Now ₹{cartPrice}.00 */}
-                Pay Now ₹1000.00
+                Pay Now ₹500.00
               </button>
             </NavLink>
           </div>
