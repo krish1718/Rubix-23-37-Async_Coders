@@ -11,7 +11,7 @@ const Contact = () => {
   useEffect(()=>{    
     if (name && email && message)
       axios
-        .post("http://localhost:5000/contact", {
+        .post("http://localhost:5002/contact", {
           name: name,
           email: email,
           message:message

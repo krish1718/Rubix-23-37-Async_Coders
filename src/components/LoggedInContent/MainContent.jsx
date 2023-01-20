@@ -24,7 +24,7 @@ const cartContext = createContext({
 });
 
 const MainContent = () => {
-  const [sum, setSum] = useState([24,17,23,13,15]);
+  const [sum, setSum] = useState([24,17,23,13,20]);
   const [currentCoins, setCurrentCoins] = useState(1000);
 
   return (

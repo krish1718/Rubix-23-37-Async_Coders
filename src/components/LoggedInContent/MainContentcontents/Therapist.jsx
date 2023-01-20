@@ -7,7 +7,7 @@ const Therapist = () => {
   const [type, setType] = useState("");
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/type`)
+      .get(`http://localhost:5001/type`)
       .then(function(response) {
         setType(response.data);
       })

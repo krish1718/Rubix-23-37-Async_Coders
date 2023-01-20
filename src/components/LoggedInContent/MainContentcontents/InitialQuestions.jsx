@@ -31,7 +31,7 @@ const InitialQuestions = ({ setinitialquestions }) => {
     if (fname && dob && gender && med && clicked) {
       setAdminUsername(type);
       axios
-        .post("http://localhost:5000/survey", {
+        .post("http://localhost:5001/survey", {
           fname: fname,
           dob: dob,
           gender: gender,
